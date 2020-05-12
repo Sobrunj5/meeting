@@ -72,11 +72,11 @@ Route::group(['prefix' => 'adminmitra'], function () {
     Route::patch('profil/update{id}','adminmitra\ProfilController@update')->name('profi.update');
 });
 
-    Route::get('/superadmin-login', 'superAdmin\Auth\LoginController@showLoginForm')->name('superadmin.login');
-    Route::post('/superadmin-login', 'superAdmin\Auth\LoginController@login')->name('superadmin.login.submit');
-    Route::get('/superadmin-register', 'superAdmin\Auth\RegisterController@showRegisterForm')->name('superadmin.register');
-    Route::post('/superadmin-register', 'superAdmin\Auth\RegisterController@store')->name('superadmin.register.submit');
-    Route::get('/superadmin-logout', 'superAdmin\Auth\LoginController@logout')->name('superadmin.logout');
+    Route::get('/superadmin-login', 'superadmin\Auth\LoginController@showLoginForm')->name('superadmin.login');
+    Route::post('/superadmin-login', 'superadmin\Auth\LoginController@login')->name('superadmin.login.submit');
+    Route::get('/superadmin-register', 'superadmin\Auth\RegisterController@showRegisterForm')->name('superadmin.register');
+    Route::post('/superadmin-register', 'superadmin\Auth\RegisterController@store')->name('superadmin.register.submit');
+    Route::get('/superadmin-logout', 'superadmin\Auth\LoginController@logout')->name('superadmin.logout');
 
     Route::get('/adminmitra-login', 'adminmitra\Auth\LoginController@showLoginForm')->name('adminmitra.login');
     Route::post('/adminmitra-login', 'adminmitra\Auth\LoginController@login')->name('adminmitra.login.submit');
