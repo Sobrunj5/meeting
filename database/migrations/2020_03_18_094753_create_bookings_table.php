@@ -27,7 +27,7 @@ class CreateBookingsTable extends Migration
             $table->date('tanggal_boking');
             $table->integer('url');
             $table->integer('ipaymu');
-            $table->enum('status', ['1', '0']);
+            $table->boolean('status')->default(false);
             $table->timestamps();
 
             $table->foreign('id_ruang')->references('id')->on('ruang_meetings')->onDelete('CASCADE');

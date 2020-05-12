@@ -20,7 +20,7 @@ class CreateMakanansTable extends Migration
             $table->integer('harga');
             $table->integer('deskripsi');
             $table->text('foto')->nullable();
-            $table->enum('status',['1','0']);
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
