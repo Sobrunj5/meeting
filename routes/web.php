@@ -62,7 +62,7 @@ Route::group(['prefix' => 'adminmitra'], function () {
     //Makanan & Minuman
     Route::get('makanan', 'adminmitra\MakananController@index')->name('makanan.index');
     Route::get('makanan/create', 'adminmitra\MakananController@create')->name('makanan.create');
-    Route::post('makanan/store', 'adminmitra\MakananController@store')->name('makanan.store');
+    //Route::post('makanan/store', 'adminmitra\MakananController@store')->name('makanan.store');
     Route::post('makanan/store', 'adminmitra\MakananController@store')->name('makanan.store');
     Route::get('makanan/edit/{id}', 'adminmitra\MakananController@edit')->name('makanan.edit');
     Route::patch('makanan/update/{id}', 'adminmitra\MakananController@update')->name('makanan.update');
