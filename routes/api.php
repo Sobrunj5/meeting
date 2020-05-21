@@ -22,3 +22,6 @@ Route::group(['prefix' =>'user'],function (){
     Route::post('login','V1\user\Auth\LoginController@login');
 });
 
+Route::get('ruangmeeting','V1\user\UserController@getRuangMeeting');
+Route::post('booking','V1\user\UserController@booking');
+

@@ -48,4 +48,9 @@ class Mitra extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function makanans()
+    {
+        return $this->hasMany(Makanan::class, 'id_mitra', 'id');
+    }
 }
