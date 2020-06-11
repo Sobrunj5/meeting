@@ -17,21 +17,20 @@ class CreateBookingsTable extends Migration
             $table->increments('id');
             $table->integer('id_ruang')->unsigned();
             $table->integer('id_user')->unsigned();
-            $table->time('lama');
+            $table->integer('id_makanan')->unsigned();
             $table->date('tanggal');
-            $table->time('jam');
-            $table->string('makanan');
-            $table->integer('catatan');
-            $table->integer('total');
-            $table->integer('bayar');
-            $table->date('tanggal_boking');
-            $table->integer('url');
-            $table->integer('ipaymu');
-            $table->boolean('status')->default(false);
+            $table->time('jam_mulai');
+            $table->time('jam_selesai');
+            $table->double('harga');
+            $table->double('total_bayar');
+            $table->string('snap_token')->nullable();
+            $table->string('verifikasi')->default('1');
+            $table->string('status')->default('pending');
             $table->timestamps();
 
             $table->foreign('id_ruang')->references('id')->on('ruang_meetings')->onDelete('CASCADE');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('CASCADE');
+
         });
     }
 

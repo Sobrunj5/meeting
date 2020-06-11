@@ -15,21 +15,20 @@ class BookingResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id"        => $this->id,
-            "id_ruang"  =>$this->id_ruang,
-            "id_user"   =>$this->id_user,
-            "lama"      =>$this->lama,
-            "tanggal"   =>$this->tanggal,
-            "jam"       =>$this->jam,
-            "makanan"   =>$this->makanan,
-            "catatan"   =>$this->catatan,
-            "total"     =>$this->total,
-            "bayar"     =>$this->bayar,
-            "tanggal_boking"=>$this->tanggal_boking,
-            "url"       =>$this->url,
-            "ipaymu"    =>$this->ipaymu,
-            "status"    =>$this->status,
-
+            "id"                => $this->id,
+            "id_ruang"          => $this->id_ruang,
+            "id_user"           => $this->id_user,
+            "id_makanan"        => $this->id_makanan,
+            "tanggal"           => $this->tanggal,
+            "jam_mulai"         => $this->jam_mulai,
+            "jam_selesai"       => $this->jam_selesai,
+            "harga"             => $this->harga,
+            "total_bayar"       => $this->total_bayar,
+            "snap_token"        => $this->snap_token,
+            "verifikasi"        => $this->verifikasi,
+            "status"            => $this->status,
+            "created_at"        => $this->created_at->format('d-m-Y'),
+            "updated_at"        => $this->updated_at->format('d-m-Y'),
 
         ];
     }

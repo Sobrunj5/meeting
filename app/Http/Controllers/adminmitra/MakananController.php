@@ -68,6 +68,7 @@ class MakananController extends Controller
         $data->harga        = $request->harga;
         $data->deskripsi    = $request->deskripsi;
         $data->foto         = $filename;
+        $data->jenis        = $request->jenis;
         $data->status       = '1';
         //dd($request->all());
         $data->save();
@@ -125,6 +126,7 @@ class MakananController extends Controller
         $data->nama         = $request->nama;
         $data->harga        = $request->harga;
         $data->deskripsi    = $request->deskripsi;
+        $data->jenis        = $request->jenis;
 
         if ($request->file('foto') == ''){
             $data->foto = $request->old_foto;
