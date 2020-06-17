@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' =>'user'],function (){
     Route::post('register', 'V1\user\Auth\RegisterController@register');
     Route::post('login','V1\user\Auth\LoginController@login');
+    Route::get('profile', 'V1\user\UserController@profile');
+    Route::post('profile/profile', 'V1\user\UserController@updateProfile');
 });
 
 Route::get('ruangmeeting','V1\user\RuanganController@getRuangMeeting');
