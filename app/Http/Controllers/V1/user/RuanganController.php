@@ -29,9 +29,12 @@ class RuanganController extends Controller
 
     public function search(Request $request)
     {
-        $tanggal = $request->tanggal;
-        $jam_mulai = $request->jam_mulai;
-        $jam_selesai  = Carbon::parse($request->jam_mulai)->addHours($request->jam_selesai)->format('H:i');
+        $tanggal_dam_waktu = $request->tanggal_dan_waktu;
+        $explode = explode(' ', $tanggal_dam_waktu);
+
+        $tanggal = $explode[0];
+        $jam_mulai = $explode[1];
+        $jam_selesai  = Carbon::parse($jam_mulai)->addHours($request->lama)->format('H:i');
 
         $bookings = Booking::where('tanggal', $tanggal)
             ->where('jam_mulai','>=',$jam_mulai)
