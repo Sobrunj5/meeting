@@ -27,5 +27,7 @@ Route::group(['prefix' =>'user'],function (){
 Route::get('ruangmeeting','V1\user\RuanganController@getRuangMeeting');
 Route::post('ruangmeeting/search', 'V1\user\RuanganController@search');
 
+Route::get('makanan/{id_mitra}', 'V1\user\MakananController@makanan');
+
 Route::post('booking','V1\user\BookingController@booking');
 
