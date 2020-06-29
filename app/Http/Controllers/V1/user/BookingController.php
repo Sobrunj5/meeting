@@ -4,12 +4,9 @@ namespace App\Http\Controllers\V1\user;
 
 use App\Booking;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\BookingResource;
+use App\OrderMakanan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 
 class BookingController extends Controller
 {
@@ -21,29 +18,34 @@ class BookingController extends Controller
     public  function booking(Request $request){
 
         try{
+            $tanggal_dam_waktu = $request->dateAndTime;
+            $explode = explode(' ', $tanggal_dam_waktu);
 
+            $tanggal = $explode[0];
+            $jam_mulai = $explode[1];
+            $jam_selesai  = Carbon::parse($jam_mulai)->addHours($request->duration)->format('H:i');
 
-            $log = new Logger('name');
-            $log->pushHandler(new StreamHandler('php://stderr', Logger::WARNING));
-            $log->addWarning($request);
+            $booking = new Booking();
+            $booking->tanggal = $tanggal;
+            $booking->jam_mulai = $jam_mulai;
+            $booking->jam_selesai = $jam_selesai;
+            $booking->id_room = $request->id_room;
+            $booking->save();
 
-            file_put_contents("php://stderr", "$request\n");
-//            $data = new Booking();
-//            $data->id_ruang         = $request->id_ruang;
-//            $data->id_user          = Auth::guard('api')->user()->id;
-//            $data->id_makanan       = $request->id_makanan;
-//            $data->tanggal          = $request->tanggal;
-//            $data->jam_mulai        = $request->jam_mulai;
-//            $data->jam_selesai      = Carbon::parse($request->jam_mulai)->addHours($request->jam_selesai);
-//            $data->harga            = $request->harga;
-//            $data->total_bayar      = $request->total_bayar;
-//            $data->save();
+            foreach ($request->foods as $food){
+                $bookingMakanan = new OrderMakanan();
+                $bookingMakanan->id_makanan = $food['id_makanan'];
+                $bookingMakanan->id_booking = $booking->id;
+                $bookingMakanan->harga = $food['harga'];
+                $bookingMakanan->jumlah = $food['qty'];
+                $bookingMakanan->total_harga = $food['harga'] * $food['qty'];
+                $bookingMakanan->save();
+            }
 
 
             return response()->json([
-                'message' => 'successfully order ',
-                'status' =>  true,
-                'data' => $request
+                'message' => 'success',
+                'status' => true
             ]);
 
         }catch (\Exception $exception){
