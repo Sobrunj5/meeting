@@ -8,6 +8,8 @@ use App\Http\Resources\BookingResource;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 class BookingController extends Controller
 {
@@ -19,6 +21,11 @@ class BookingController extends Controller
     public  function booking(Request $request){
 
         try{
+
+
+            $log = new Logger('name');
+            $log->pushHandler(new StreamHandler('php://stderr', Logger::WARNING));
+            $log->addWarning($request);
 
             file_put_contents("php://stderr", "$request\n");
 //            $data = new Booking();
