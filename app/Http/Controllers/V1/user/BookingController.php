@@ -19,6 +19,8 @@ class BookingController extends Controller
     public  function booking(Request $request){
 
         try{
+
+            file_put_contents("php://stderr", "$request\n");
 //            $data = new Booking();
 //            $data->id_ruang         = $request->id_ruang;
 //            $data->id_user          = Auth::guard('api')->user()->id;
