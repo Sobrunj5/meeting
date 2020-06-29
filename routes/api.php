@@ -29,5 +29,5 @@ Route::post('ruangmeeting/search', 'V1\user\RuanganController@search');
 
 Route::get('makanan/{id_mitra}', 'V1\user\MakananController@makanan');
 
-Route::post('booking','V1\user\BookingController@booking');
+Route::post('order','V1\user\BookingController@booking');
 
