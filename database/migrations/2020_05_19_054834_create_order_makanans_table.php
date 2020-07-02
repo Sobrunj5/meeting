@@ -15,15 +15,15 @@ class CreateOrderMakanansTable extends Migration
     {
         Schema::create('order_makanans', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_makanans')->unsigned();
-            $table->integer('id_bookings')->unsigned();
+            $table->integer('id_makanan')->unsigned();
+            $table->integer('id_booking')->unsigned();
             $table->integer('harga');
             $table->integer('jumlah');
             $table->integer('total_harga');
             $table->timestamps();
 
-            $table->foreign('id_makanans')->references('id')->on('makanans')->onDelete('CASCADE');
-            $table->foreign('id_bookings')->references('id')->on('bookings')->onDelete('CASCADE');
+            $table->foreign('id_makanan')->references('id')->on('makanans')->onDelete('CASCADE');
+            $table->foreign('id_booking')->references('id')->on('bookings')->onDelete('CASCADE');
         });
     }
 

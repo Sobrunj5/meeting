@@ -32,7 +32,7 @@
             <form class="login100-form validate-form" method="POST" action="{{ route('superadmin.login.submit') }}">
                 @csrf
                 <span class="login100-form-logo">
-						<img alt="" src="{{asset('assets/img/logo-2.png')}}">
+						<img alt="" src="{{asset('assets/img/1.jpg')}}">
 					</span>
                 <span class="login100-form-title p-b-34 p-t-27">
 						Log in

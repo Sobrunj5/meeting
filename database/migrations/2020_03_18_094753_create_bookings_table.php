@@ -17,7 +17,6 @@ class CreateBookingsTable extends Migration
             $table->increments('id');
             $table->integer('id_ruang')->unsigned();
             $table->integer('id_user')->unsigned();
-            $table->integer('id_makanan')->unsigned();
             $table->date('tanggal');
             $table->time('jam_mulai');
             $table->time('jam_selesai');
