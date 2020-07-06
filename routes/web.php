@@ -2,24 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-//Route::get('/superadmin', function()  {
-//    return view('templates.superadmin');
-//});
-
-//Route::get('/adminmitra', function()  {
-  //  return view('templates.adminmitra');
-//});
 
 Route::get('/', function()  {
     return view('templates.adminmitrahome');
@@ -50,6 +32,10 @@ Route::group(['prefix' => 'adminmitra'], function () {
 
     Route::get('dashboard', 'adminmitra\DashboardController@index')->name('dashboard.index');
     Route::get('boking', 'adminmitra\BokingMasukController@index')->name('boking.index');
+
+    //profie
+    Route::get('profil','adminmitra\ProfilController@index')->name('profil.index');
+    Route::patch('profil/update','adminmitra\ProfilController@updateProfil')->name('profil.update');
     //ruang meeting
     Route::get('ruangmeeting', 'adminmitra\RuangMeetingController@index')->name('ruangmeeting.index');
     Route::get('ruangmeeting/create', 'adminmitra\RuangMeetingController@create')->name('ruangmeeting.create');

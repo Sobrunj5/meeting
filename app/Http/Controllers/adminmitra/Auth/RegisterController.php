@@ -46,44 +46,38 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
 
-    public  function showRegisterForm()
+    public function showRegisterForm()
     {
         return view('auth_adminmitra.register');
     }
 
-    public  function  store(Request $request)
+    public function store(Request $request)
     {
 
         $this->validate($request, [
-           'nama_mitra'     => 'required |unique:mitras',
-            'email'         => 'required |unique:mitras|email',
-            'no_hp'         => 'required |unique:mitras',
-            "password"      => 'required',
-            'nama_pemilik'  => 'required',
-            'nama_bank'     => 'required',
-            'nama_rekening' => 'required',
-            'nama_akun_bank'=> 'required',
-            'alamat'        =>'required',
-
+            'nama_mitra' => 'required |unique:mitras',
+            'email'     => 'required |unique:mitras|email',
+            'no_hp'     => 'required |unique:mitras',
+            "password" => 'required',
         ]);
 
         $data = new Mitra();
-        $data->nama_mitra       = $request->nama_mitra;
-        $data->email            =$request->email;
-        $data->no_hp            =$request->no_hp;
-        $data->password         =Hash::make($request->password);
-        $data->nama_pemilik     =$request->nama_pemeilik;
-        $data->nama_bank        =$request->nama_bank;
-        $data->nama_rekening    =$request->nama_rekening;
-        $data->nama_akun_bank   =$request->nama_akun_bank;
-        $data->alamat           =$request->alamat;
+        $data->nama_mitra = $request->nama_mitra;
+        $data->email = $request->email;
+        $data->no_hp = $request->no_hp;
+        $data->password = Hash::make($request->password);
         $data->save();
 
-        return redirect()->route('adminmitra.login');
+        if ($data) {
+            return redirect()->route('adminmitra.login');
+        } else {
+            return redirect()->back()->with(['error' => 'kesalahan menginputkan data']);
+        }
+
 
     }
 }

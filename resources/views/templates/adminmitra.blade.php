@@ -46,4 +46,5 @@
 <!-- start js include path -->
 @include('templates.partials.adminmitra._script')
 <!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Mar 2020 06:03:51 GMT -->
+</body>
 </html>

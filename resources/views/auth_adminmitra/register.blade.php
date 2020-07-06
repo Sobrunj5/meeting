@@ -34,18 +34,13 @@
 						<img alt="" src="{{asset('assets/img/logo-2.png')}}">
 					</span>
                 <span class="login100-form-title p-b-34 p-t-27">Registration Mitra</span>
+                @if($message = Session::get('error'))
+                    <p>{{ $message }}</p>
+                @endif
                 <div class="row">
                     <div class="col-lg-6 p-t-20">
                         <div class="wrap-input100 validate-input" data-validate="Enter username">
                             <input class="input100" type="nama_mitra" name="nama_mitra" placeholder="Nama Mitra" >
-                            <span class="focus-input100" data-placeholder="&#xf207;"></span>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 p-t-20">
-                        <div class="wrap-input100 validate-input" data-validate="Enter alamat">
-                            <input class="input100" type="alamat" name="alamat" placeholder="alamat" >
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
 
                         </div>
@@ -70,30 +65,7 @@
                             <span class="focus-input100" data-placeholder="&#xf2be;"></span>
                         </div>
                     </div>
-                    <div class="col-lg-6 p-t-20">
-                        <div class="wrap-input100 validate-input" data-validate="Enter password again">
-                            <input class="input100" type="texk" name="nama_pemilik" placeholder="Nama Pemilik">
-                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 p-t-20">
-                        <div class="wrap-input100 validate-input" data-validate="Enter password again">
-                            <input class="input100" type="text" name="nama_bank" placeholder="Nama Bank">
-                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 p-t-20">
-                        <div class="wrap-input100 validate-input" data-validate="Enter password again">
-                            <input class="input100" type="text" name="nama_rekening" placeholder="Nama rekening">
-                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 p-t-20">
-                        <div class="wrap-input100 validate-input" data-validate="Enter password again">
-                            <input class="input100" type="text" name="nama_akun_bank" placeholder="Nama Akun Bank">
-                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">
