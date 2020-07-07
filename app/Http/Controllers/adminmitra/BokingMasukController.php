@@ -20,6 +20,7 @@ class BokingMasukController extends Controller
 
     public function index()
     {
+
         return view('pages.adminmitra.boking.index');
 
     }

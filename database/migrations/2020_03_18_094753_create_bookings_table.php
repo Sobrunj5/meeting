@@ -21,7 +21,7 @@ class CreateBookingsTable extends Migration
             $table->time('jam_mulai');
             $table->time('jam_selesai');
             $table->double('harga');
-            $table->double('total_bayar');
+            $table->double('total_bayar')->default(0);
             $table->string('snap_token')->nullable();
             $table->string('verifikasi')->default('1');
             $table->string('status')->default('pending');
