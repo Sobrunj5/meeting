@@ -44,6 +44,7 @@ class RuanganController extends Controller
                 return response()->json([
                     'message' => 'maaf minimal 6 jam pemesanan dari waktu sekarang',
                     'status' => false,
+                    'data' => (object)[]
                 ]);
             }
 
@@ -75,6 +76,7 @@ class RuanganController extends Controller
             return response()->json([
                 'message' => 'tidak ada ruangan untuk tanggal kemaren',
                 'status' => false,
+                'data' => (object)[]
             ]);
         }
 
