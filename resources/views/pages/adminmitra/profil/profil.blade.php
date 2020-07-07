@@ -82,10 +82,8 @@
                                         <label> Alamat </label>
                                         <textarea rows="5" class="form-control {{$errors->has('alamat')?'is-invalid':''}}"
                                                   name="alamat" id="alamat">{{Auth::guard('adminmitra')->user()->alamat}}
-                                            {{old('alamat')}}
-                                        </textarea>
+                                            {{old('alamat')}}</textarea>
                                         @if ($errors->has('alamat'))
-
                                             <span class="invalid-feedback" role="alert">
                                         <p><b>{{ $errors->first('alamat') }}</b></p>
                                     </span>
@@ -94,7 +92,7 @@
                                     <div class="col-12 mt-2">
                                         <label> Nama Pemilik </label>
                                         <input class="form-control {{$errors->has('nama_pemilik')?'is-invalid':''}}"
-                                               name="nama_pemilik" type="text" value="{{Auth::guard('adminmitra')->user()->nama_pemilik}}" />
+                                               name="nama_pemilik" type="text" value="{{Auth::guard('adminmitra')->user()->nama_pemilik}}" value="{{old('nama_pemilik')}}"/>
                                         @if ($errors->has('nama_pemilik'))
                                             <span class="invalid-feedback" role="alert">
                                         <p><b>{{ $errors->first('nama_pemilik') }}</b></p>

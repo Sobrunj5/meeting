@@ -16,11 +16,11 @@ class RuanganController extends Controller
 
         $datas = RuangMeeting::with(['mitra' => function($mitra){
             $mitra->with(['makanans' => function($query){
-                $query->where('jenis', 'gratis')->get();
+                $query->where('jenis', 'gratis');
             }]);
         }])->get();
         //$datas = RuangMeeting::all();
-        return response() ->json([
+        return response()->json([
             'message' => ' berhasil mengambil semua data ruamg meeting',
             'status' =>  true,
             'data' => $datas
@@ -34,29 +34,52 @@ class RuanganController extends Controller
 
         $tanggal = $explode[0];
         $jam_mulai = $explode[1];
-        $jam_selesai  = Carbon::parse($jam_mulai)->addHours($request->lama)->format('H:i');
 
-        $bookings = Booking::where('tanggal', $tanggal)
-            ->where('jam_mulai','>=',$jam_mulai)
-            ->where('jam_selesai', '<=', $jam_selesai)->get();
+        $jamSekarangPlus6Jam = Carbon::now()->addHours(6)->format('H:i');
+        $tanggalSekarang = Carbon::now()->format('Y m d');
 
-        $ruangs = $datas = RuangMeeting::with(['mitra' => function($mitra){
-            $mitra->with(['makanans' => function($query){
-                $query->where('jenis', 'gratis')->get();
-            }]);
-        }])->where('status', true)->get();
+        if ($tanggal == $tanggalSekarang){
 
-        $results = [];
-        foreach ($ruangs as $key => $ruang){
-            if (isset($bookings[$key]->id_ruang) != $ruang->id){
-                array_push($results, $ruang);
+            if($jam_mulai < $jamSekarangPlus6Jam){
+                return response()->json([
+                    'message' => 'maaf minimal 6 jam pemesanan dari waktu sekarang',
+                    'status' => false,
+                    'data' => (object)[]
+                ]);
             }
+
+            $jam_selesai  = Carbon::parse($jam_mulai)->addHours($request->lama)->format('H:i');
+
+            $bookings = Booking::where('tanggal', $tanggal)
+                ->where('jam_mulai','>=',$jam_mulai)
+                ->where('jam_selesai', '<=', $jam_selesai)->get();
+
+            $ruangs = RuangMeeting::with(['mitra' => function($mitra){
+                $mitra->with(['makanans' => function($query){
+                    $query->where('jenis', 'gratis')->get();
+                }]);
+            }])->where('status', true)->get();
+
+            $results = [];
+            foreach ($ruangs as $key => $ruang) {
+                if (isset($bookings[$key]->id_ruang) != $ruang->id) {
+                    array_push($results, $ruang);
+                }
+            }
+
+            return response()->json([
+                'message' => 'successfully search by date and time',
+                'status' => true,
+                'data' => $results
+            ]);
+        }else{
+
+            return response()->json([
+                'message' => 'tidak ada ruangan untuk tanggal kemaren',
+                'status' => false,
+                'data' => (object)[]
+            ]);
         }
 
-        return response()->json([
-            'message' => 'successfully search by date and time',
-            'status' => true,
-            'data' => $results
-        ]);
     }
 }

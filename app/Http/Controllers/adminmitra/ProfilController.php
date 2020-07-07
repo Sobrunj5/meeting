@@ -17,8 +17,17 @@ class ProfilController extends Controller
 
     public function updateProfil(Request $request)
     {
+        //ini validasi di form
+        $this->validate($request,[
+            'nama_pemilik'      =>'required',
 
-        //ini store atau menambahkan data ke database dengan tabel yang bernama mitras
+
+
+        ]);
+
+
+
+            //ini store atau menambahkan data ke database dengan tabel yang bernama mitras
 
 //        $datas                       = new Mitra();
         $data                      = Auth::guard('adminmitra')->user();
@@ -27,8 +36,8 @@ class ProfilController extends Controller
         $data->nama_bank           = $request->nama_bank;
         $data->nama_rekening       = $request->nama_rekening;
         $data->nama_akun_bank      = $request->nama_akun_bank;
-        $data->latitude            =$request->latitude;
-        $data->longitude           =$request->longitude;
+        $data->latitude            = $request->latitude;
+        $data->longitude           = $request->longitude;
 
 //        $data->status       = '1';
         //dd($request->all());
