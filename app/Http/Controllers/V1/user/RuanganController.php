@@ -36,7 +36,7 @@ class RuanganController extends Controller
         $jam_mulai = $explode[1];
 
         $jamSekarangPlus6Jam = Carbon::now()->addHours(6)->format('H:i');
-        $tanggalSekarang = Carbon::now()->format('Y m d');
+        $tanggalSekarang = Carbon::now()->format('Y-m-d');
 
         if ($tanggal == $tanggalSekarang){
 
@@ -73,7 +73,6 @@ class RuanganController extends Controller
                 'data' => $results
             ]);
         }else{
-
             return response()->json([
                 'message' => 'tidak ada ruangan untuk tanggal kemaren',
                 'status' => false,
