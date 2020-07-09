@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Midtrans\Snap;
 use App\Http\Controllers\Midtrans\Config;
 use App\Http\Resources\BookingResource;
+use Laravel\Ui\Presets\React;
 
 class BookingController extends Controller
 {
@@ -120,6 +121,18 @@ class BookingController extends Controller
             'message' => 'successfully get booking by user',
             'status' => true,
             'data' => BookingResource::collection($booking)
+        ]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $booking = Booking::where('id', $id)->first();
+        $booking->status = $request->status;
+        $booking->update();
+
+        return response()->json([
+            'message' => 'successfully update status order',
+            'status' => true
         ]);
     }
 }

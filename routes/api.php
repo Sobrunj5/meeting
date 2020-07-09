@@ -31,6 +31,7 @@ Route::get('makanan/{id_mitra}', 'V1\user\MakananController@makanan');
 
 Route::post('order','V1\user\BookingController@booking');
 Route::get('order/user', 'V1\user\BookingController@bookingByUser');
+Route::post('order/{id}/update', 'V1\user\BookingController@update');
 
 Route::post('snap', 'V1\user\BookingController@snapToken');
 Route::post('snap/charge', 'V1\user\BookingController@snapToken');
