@@ -7,6 +7,10 @@ Route::get('/', function()  {
     return view('templates.adminmitrahome');
 });
 
+Route::post('/finish', function () {
+    return redirect()->route('welcome');
+})->name('donation.finish');
+
 Route::group(['prefix' => 'superadmin'], function () {
 
     Route::get('dashboard', 'superadmin\DashboardController@index')->name('dashboards.index');
@@ -35,8 +39,8 @@ Route::group(['prefix' => 'adminmitra'], function () {
 
 
     Route::get('boking', 'adminmitra\BokingMasukController@index')->name('boking.index');
-    Route::get('booking/verifikasi', 'adminmitra\BookingMasukController@verifikasi')->name('booking.verifikasi');
-    Route::get('booking/tolak', 'adminmitra\BookingMasukController@tolak')->name('booking.tolak');
+    Route::get('booking/{id}/verifikasi', 'adminmitra\BokingMasukController@verifikasi')->name('booking.verifikasi');
+    Route::get('booking/{id}/tolak', 'adminmitra\BokingMasukController@tolak')->name('booking.tolak');
 
     //profie
     Route::get('profil','adminmitra\ProfilController@index')->name('profil.index');
