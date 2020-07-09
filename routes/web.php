@@ -27,6 +27,7 @@ Route::group(['prefix' => 'superadmin'], function () {
     Route::get('ruangmeeting/edit/{id}', 'superadmin\RuangMeetingController@edit')->name('ruangmeetings.edit');
     Route::patch('ruangmeeting/update/{id}', 'superadmin\RuangMeetingController@update')->name('ruangmeetings.update');
     Route::get('ruangmeeting/destroy/{id}', 'superadmin\RuangMeetingController@destroy')->name('ruangmeetings.destroy');
+    Route::get('ruangmeeting/show{id}', 'superadmin\RuangMeetingController@show')->name('ruangmeetings.show');
     Route::get('verifikasi/{id}','superadmin\RuangMeetingController@verifikasi')->name('ruangmeetings.verifikasi');
 
     Route::get('datatransaksi', 'superadmin\DataTransaksiController@index')->name('datatransaksi.index');

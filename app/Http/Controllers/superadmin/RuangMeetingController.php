@@ -77,7 +77,8 @@ class RuangMeetingController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = RuangMeeting::findOrfail($id);
+        return view('pages.superadmin.mitra.show', compact('data'));
     }
 
     /**

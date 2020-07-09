@@ -32,7 +32,7 @@
                                 <i class="icon-user"></i> Profile </a>
                         </li>
                         <li>
-                            <a href="login.html">
+                            <a href="{{route('superadmin.logout')}}">
                                 <i class="icon-logout"></i> Log Out </a>
                         </li>
                     </ul>

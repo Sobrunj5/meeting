@@ -21,7 +21,7 @@
                                 <th> Nama Tempat </th>
                                 <th> Kapasitas</th>
                                 <th> Harga Sewa </th>
-                                <th> Mitra </th>
+                                <th> Nama Mitra </th>
                                 <th> Keterangan </th>
                                 <th> Action </th>
                             </tr>
@@ -42,7 +42,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="{{route('ruangmeetings.edit', $data->id)}}"--}}
+                                        <a href="{{route('ruangmeetings.show', $data->id)}}"--}}
                                            onclick="return confirm('Apakah Anda ingin melihat data ini?')" type="button" class="btn default btn-outline btn-circle m-b-10">Detail</a>
 
                                     </td>

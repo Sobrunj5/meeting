@@ -1,9 +1,4 @@
-
-<!DOCTYPE html>
 <html>
-
-
-<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Mar 2020 06:04:39 GMT -->
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +10,7 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet"
           type="text/css"/>
     <!-- icons -->
-    <link href="{{asset('fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('assets/fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/iconic/css/material-design-iconic-font.min.css')}}">
     <!-- bootstrap -->
     <link href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
@@ -112,7 +107,4 @@
     }
     ;</script>
 </body>
-
-
-<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Mar 2020 06:04:46 GMT -->
 </html>

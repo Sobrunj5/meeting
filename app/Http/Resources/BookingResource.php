@@ -16,9 +16,6 @@ class BookingResource extends JsonResource
     {
         return [
             "id"                => $this->id,
-            "id_ruang"          => $this->id_ruang,
-            "id_user"           => $this->id_user,
-            "id_makanan"        => $this->id_makanan,
             "tanggal"           => $this->tanggal,
             "jam_mulai"         => $this->jam_mulai,
             "jam_selesai"       => $this->jam_selesai,
@@ -27,9 +24,10 @@ class BookingResource extends JsonResource
             "snap_token"        => $this->snap_token,
             "verifikasi"        => $this->verifikasi,
             "status"            => $this->status,
-            "created_at"        => $this->created_at->format('d-m-Y'),
-            "updated_at"        => $this->updated_at->format('d-m-Y'),
-
+            "ruang"             => new RuangMeetingResource($this->ruang),
+            "user"              => new UserResource($this->user),
+            // "created_at"        => $this->created_at->format('d-m-Y'),
+            // "updated_at"        => $this->updated_at->format('d-m-Y'),
         ];
     }
 }

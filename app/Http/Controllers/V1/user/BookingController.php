@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Midtrans\Snap;
 use App\Http\Controllers\Midtrans\Config;
+use App\Http\Resources\BookingResource;
 
 class BookingController extends Controller
 {
@@ -109,5 +110,16 @@ class BookingController extends Controller
         } catch (\Exception $exception) {
             return response()->json($exception->getMessage());
         }
+    }
+
+    public function bookingByUser()
+    {
+        $booking = Booking::where('id_user', Auth::guard('api')->user()->id)->get();
+
+        return response()->json([
+            'message' => 'successfully get booking by user',
+            'status' => true,
+            'data' => BookingResource::collection($booking)
+        ]);
     }
 }
