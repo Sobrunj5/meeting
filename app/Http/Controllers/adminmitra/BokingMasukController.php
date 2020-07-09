@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\adminmitra;
 
+use App\Booking;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -20,8 +21,8 @@ class BokingMasukController extends Controller
 
     public function index()
     {
-
-        return view('pages.adminmitra.boking.index');
+        $datas = Booking::where('verifikasi', '1')->get();
+        return view('pages.adminmitra.boking.index', compact('datas'));
 
     }
 

@@ -19,8 +19,10 @@
                         <table
                                 class="table table-striped table-bordered table-hover table-checkable order-column valign-middle"
                                 id="example4">
-                            <thead>
+                            
+                                <thead>
                             <tr>
+                                <th> No. </th>
                                 <th> Ruang </th>
                                 <th> Lama</th>
                                 <th> Tanggal</th>
@@ -33,21 +35,28 @@
                             </tr>
                             </thead>
                             <tbody>
+                                @foreach ($datas as $data)
                             <tr class="odd gradeX">
-
-                                <td>Ball Room</td>
-                                <td> 0 Jam</td>
-                                <td>2020-03-01</td>
-                                <td>08.00</td>
-                                <td>150000/Jam</td>
-                                <td>Paket Hemat: 20.000x1=20.000</td>
+                                
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $data->ruang->nama_tempat }}</td>
+                                <td>{{ $data->user->nama}}</td>
+                                <td>{{ $data->tanggal }}</td>
+                                <td>{{ $data->jam_mulai }}</td>
+                                <td>{{ $data->harga }}</td>
+                                @foreach ($data->makanans as $makanan)
+                                    <td>{{ $makanan->makanan->nama}}</td>
+                                @endforeach
+                                <td>Paket Hemat: 20.000x1=20.000</td>   
                                 <td></td>
                                 <td>Rp.0</td>
                                 <td>
                                     <button type="button" class="btn default btn-outline btn-circle m-b-10">Edit</button>
                                     <button type="button" class="btn default btn-outline btn-circle m-b-10">Delete</button>
                                 </td>
+                                
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
