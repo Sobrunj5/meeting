@@ -28,6 +28,7 @@ class BookingController extends Controller
 
             $booking = new Booking();
             $booking->id_user = Auth::guard('api')->user()->id;
+            $booking->id_mitra = $request->id_mitra;
             $booking->tanggal = $tanggal;
             $booking->jam_mulai = $jam_mulai;
             $booking->jam_selesai = $jam_selesai;

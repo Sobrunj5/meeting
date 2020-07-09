@@ -16,6 +16,7 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_ruang')->unsigned();
+            $table->integer('id_mitra')->unsigned();
             $table->integer('id_user')->unsigned();
             $table->date('tanggal');
             $table->time('jam_mulai');
@@ -28,6 +29,7 @@ class CreateBookingsTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_ruang')->references('id')->on('ruang_meetings')->onDelete('CASCADE');
+            $table->foreign('id_mitra')->references('id')->on('mitras')->onDelete('CASCADE');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('CASCADE');
 
         });

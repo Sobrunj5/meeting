@@ -47,12 +47,11 @@
                                 @foreach ($data->makanans as $makanan)
                                     <td>{{ $makanan->makanan->nama}}</td>
                                 @endforeach
-                                <td>Paket Hemat: 20.000x1=20.000</td>   
                                 <td></td>
                                 <td>Rp.0</td>
                                 <td>
-                                    <button type="button" class="btn default btn-outline btn-circle m-b-10">Edit</button>
-                                    <button type="button" class="btn default btn-outline btn-circle m-b-10">Delete</button>
+                                    <a href="{{ route('booking.verifikasi') }}" class="btn default btn-outline btn-circle btn-sm">Konfirmasi</a>
+                                    <a href="{{ route('booking.tolak') }}" class="btn default btn-outline btn-circle btn-sm">Tolak</a>
                                 </td>
                                 
                             </tr>

@@ -46,7 +46,6 @@
                         </div>
                     </div>
 
-
                     <div class="col-lg-6 p-t-20">
                         <div class="wrap-input100 validate-input" data-validate="Enter email">
                             <input class="input100" type="email" name="email" placeholder="Email">

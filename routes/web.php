@@ -32,7 +32,11 @@ Route::group(['prefix' => 'superadmin'], function () {
 Route::group(['prefix' => 'adminmitra'], function () {
 
     Route::get('dashboard', 'adminmitra\DashboardController@index')->name('dashboard.index');
+
+
     Route::get('boking', 'adminmitra\BokingMasukController@index')->name('boking.index');
+    Route::get('booking/verifikasi', 'adminmitra\BookingMasukController@verifikasi')->name('booking.verifikasi');
+    Route::get('booking/tolak', 'adminmitra\BookingMasukController@tolak')->name('booking.tolak');
 
     //profie
     Route::get('profil','adminmitra\ProfilController@index')->name('profil.index');
