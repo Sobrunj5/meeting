@@ -21,4 +21,9 @@ class Booking extends Model
     {
         return $this->hasMany(OrderMakanan::class, 'id_booking', 'id');
     }
+
+    public function mitra()
+    {
+        return $this->belongsTo(Mitra::class, 'id_mitra', 'id');
+    }
 }

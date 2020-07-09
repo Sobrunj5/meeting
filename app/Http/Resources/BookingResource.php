@@ -26,6 +26,7 @@ class BookingResource extends JsonResource
             "status"            => $this->status,
             "ruang"             => new RuangMeetingResource($this->ruang),
             "user"              => new UserResource($this->user),
+            "mitra"             => new MitraResource($this->mitra),
             // "created_at"        => $this->created_at->format('d-m-Y'),
             // "updated_at"        => $this->updated_at->format('d-m-Y'),
         ];
