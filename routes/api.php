@@ -30,7 +30,7 @@ Route::post('ruangmeeting/search', 'V1\user\RuanganController@search');
 Route::get('makanan/{id_mitra}', 'V1\user\MakananController@makanan');
 
 Route::post('order','V1\user\BookingController@booking');
-Route::post('order/user', 'V1\user\BookingController@bookingByUser');
+Route::get('order/user', 'V1\user\BookingController@bookingByUser');
 
 Route::post('snap', 'V1\user\BookingController@snapToken');
 Route::post('snap/charge', 'V1\user\BookingController@snapToken');
