@@ -75,7 +75,8 @@ class DataMitraController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Mitra::findOrfail($id);
+        return view('pages.superadmin.mitra.show',compact('data'));
     }
 
     /**

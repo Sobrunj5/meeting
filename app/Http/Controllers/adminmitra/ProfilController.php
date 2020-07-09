@@ -17,13 +17,6 @@ class ProfilController extends Controller
 
     public function updateProfil(Request $request)
     {
-        //ini validasi di form
-        $this->validate($request,[
-            'nama_pemilik'      =>'required',
-
-
-
-        ]);
 
 
 
@@ -34,7 +27,7 @@ class ProfilController extends Controller
         $data->alamat              = $request->alamat;
         $data->nama_pemilik        = $request->nama_pemilik;
         $data->nama_bank           = $request->nama_bank;
-        $data->nama_rekening       = $request->nama_rekening;
+        $data->nomor_rekening      = $request->nomor_rekening;
         $data->nama_akun_bank      = $request->nama_akun_bank;
         $data->latitude            = $request->latitude;
         $data->longitude           = $request->longitude;

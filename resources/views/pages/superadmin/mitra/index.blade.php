@@ -32,7 +32,7 @@
                                     <td>{{$data->alamat}}</td>
                                     <td>{{$data->no_hp}}</td>
                                     <td>
-                                        <a href="{{route('ruangmeetings.edit', $data->id)}}"
+                                        <a href="{{route('datamitra.show', $data->id)}}"
                                            onclick="return confirm('Apakah Anda ingin melihat data ini?')"type="button" class="btn default btn-outline btn-circle m-b-10">Detail</a>
                                     </td>
                                 </tr>

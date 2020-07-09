@@ -110,12 +110,12 @@
                                         @endif
                                     </div>
                                     <div class="col-12 mt-2">
-                                        <label> Nama Rekening </label>
-                                        <input class="form-control {{$errors->has('nama_rekening')?'is-invalid':''}}"
-                                               name="nama_rekening" type="text" value="{{Auth::guard('adminmitra')->user()->nama_rekening}}" />
-                                        @if ($errors->has('nama_rekening'))
+                                        <label> Nomor Rekening </label>
+                                        <input class="form-control {{$errors->has('nomor_rekening')?'is-invalid':''}}"
+                                               name="nomor_rekening" type="text" value="{{Auth::guard('adminmitra')->user()->nomor_rekening}}" />
+                                        @if ($errors->has('nomor_rekening'))
                                             <span class="invalid-feedback" role="alert">
-                                        <p><b>{{ $errors->first('nama_rekening') }}</b></p>
+                                        <p><b>{{ $errors->first('nomor_rekening') }}</b></p>
                                     </span>
                                         @endif
                                     </div>

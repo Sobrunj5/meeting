@@ -33,12 +33,14 @@ class RuanganController extends Controller
         $explode = explode(' ', $tanggal_dam_waktu);
 
         $tanggal = $explode[0];
-        $jam_mulai = $explode[1];
+        $jam_mulai = $explode[1];        
 
         $jamSekarangPlus6Jam = Carbon::now()->addHours(6)->format('H:i');
         $tanggalSekarang = Carbon::now()->format('Y-m-d');
+        $hanyaTanggalRequest = Carbon::parse($tanggal)->format('d');
+        $hanyaTanggalSekarang = Carbon::parse($tanggalSekarang)->format('d');
 
-        if ($tanggal == $tanggalSekarang){
+        if ($hanyaTanggalRequest >= $hanyaTanggalSekarang){
 
             if($jam_mulai < $jamSekarangPlus6Jam){
                 return response()->json([

@@ -16,6 +16,7 @@ Route::group(['prefix' => 'superadmin'], function () {
     Route::post('datamitra/store', 'superadmin\DataMitraController@store')->name('datamitra.store');
     Route::get('datamitra/edit/{id}','superadmin\DataMitraController@edit')->name('datamitra.edit');
     Route::patch('datamitra/update{id}','superadmin\DataMitraController@update')->name('datamitra.update');
+    Route::get('datamitra/show{id}','superadmin\DataMitraController@show')->name('datamitra.show');
     Route::get('datamitra/destroy/{id}','superadmin\DataMitraController@destroy')->name('datamitra.destroy');
     //Ruang Meeting
     Route::get('ruangmeeting', 'superadmin\RuangMeetingController@index')->name('ruangmeetings.index');

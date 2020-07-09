@@ -26,7 +26,7 @@ class Mitra extends Authenticatable
         'no_hp',
         'nama_pemilik',
         'nama_bank',
-        'nama_rekening',
+        'nomor_rekening',
         'nama_akun_bank',
         'alamat',
     ];

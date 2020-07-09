@@ -21,7 +21,7 @@ class CreateMitrasTable extends Migration
             $table->string('password');
             $table->string('nama_pemilik')->nullable();
             $table->string('nama_bank')->nullable();
-            $table->string('nama_rekening')->nullable();
+            $table->string('nomor_rekening')->nullable();
             $table->string('nama_akun_bank')->nullable();
             $table->text('alamat')->nullable();
             $table->boolean('status')->default(true);
