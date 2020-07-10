@@ -42,6 +42,7 @@ class BookingController extends Controller
             $booking->jam_selesai = $jam_selesai;
             $booking->id_ruang = $request->id_room;
             $booking->harga = $request->harga * $request->durasi;
+            $booking->status = "none";
             $booking->save();
 
             foreach ($request->makanans as $makanan){
