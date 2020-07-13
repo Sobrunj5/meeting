@@ -8,7 +8,7 @@
     <div class="col-md-12">
         <div class="card card-box">
             <div class="card-head">
-                <header>Data Boking Masuk</header>
+                <header>Data Booking Masuk</header>
             </div>
             <div class="card-body ">
                 <div class="row">
@@ -28,10 +28,10 @@
                                 <th> Tanggal</th>
                                 <th> Jam</th>
                                 <th> Harga</th>
-                                <th> Makan/Minum</th>
-                                <th> Catatan Khusus</th>
                                 <th> Total</th>
-                                <th> Action </th>
+                                {{--<th> Catatan Khusus</th>--}}
+                                {{--<th> Total</th>--}}
+                                {{--<th> Action </th>--}}
                             </tr>
                         </thead>
                         <tbody>
@@ -45,10 +45,10 @@
                                 <td>{{ $data->jam_mulai }}</td>
                                 <td>{{ $data->harga }}</td>
                                 <td>{{ $data->total_bayar }}</td>
-                                @foreach ($data->makanans as $makanan)
-                                <td>{{ $makanan->makanan->nama}}</td>
-                                @endforeach
-                                <td>
+                                {{--@foreach ($data->makanans as $makanan)--}}
+                                {{--<td>{{ $makanan->makanan->nama}}</td>--}}
+                                {{--@endforeach--}}
+                                {{--<td>--}}
                                     <a href="{{ route('booking.verifikasi', $data->id) }}"
                                         class="btn default btn-outline btn-circle btn-sm">Konfirmasi</a>
                                     <a href="{{ route('booking.tolak', $data->id) }}"
