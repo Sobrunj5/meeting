@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\RuangMeeting;
 use Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RuangMeetingController extends Controller
 {
@@ -22,7 +23,7 @@ class RuangMeetingController extends Controller
 
     public function index()
     {
-        $meetings = RuangMeeting::where('id_mitra', Auth::user()->id)->get();
+        $meetings = RuangMeeting::where('id_mitra', Auth()->user()->id)->get();
         return view('pages.adminmitra.meeting.index', compact('meetings'));
     }
 
@@ -55,19 +56,26 @@ class RuangMeetingController extends Controller
         ]);
 
         //ini upload foto ke form
-        $image      = $request->file('foto');
-        $filename   = rand().'.'.$image->getClientOriginalExtension();
-        $path       = public_path('uploads/ruangmeeting');
-        $image->move($path,$filename);
+        // $image      = $request->file('foto');
+        // $filename   = rand().'.'.$image->getClientOriginalExtension();
+        // $path       = public_path('uploads/ruangmeeting');
+        // $image->move($path,$filename);
+
+        $file      = $request->file('foto');
+        $filename   = rand() . '.' . $file->getClientOriginalExtension();
+        $file_path = 'uploads/ruangmeeting/' . $filename;
+        Storage::disk('s3')->put($file_path, file_get_contents($file));
 
         //ini store atau menambahkan data ke database dengan tabel yang bernama ruang meeting
 
         $data               = new RuangMeeting();
-        $data->id_mitra     = Auth::user()->id;
+        $data->id_mitra     = auth()->user()->id;
         $data->nama_tempat  = $request->nama_tempat;
         $data->kapasitas    = $request->kapasitas;
         $data->harga_sewa   = $request->harga_sewa;
-        $data->foto         = $filename;
+
+        $data->foto = Storage::disk('s3')->url($file_path, $filename);
+
         $data->keterangan   = $request->keterangan;
         //dd($request->all());
         $data->save();
@@ -123,7 +131,7 @@ class RuangMeetingController extends Controller
         //ini store atau menambahkan data ke database dengan tabel yang bernama ruang meeting
 
         $data = RuangMeeting::findOrFail($id);
-        $data->id_mitra     = Auth::user()->id;
+        $data->id_mitra     = Auth()->user()->id;
         $data->nama_tempat  = $request->nama_tempat;
         $data->kapasitas    = $request->kapasitas;
         $data->harga_sewa   = $request->harga_sewa;

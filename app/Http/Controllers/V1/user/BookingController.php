@@ -45,6 +45,7 @@ class BookingController extends Controller
             $booking->status = "none";
             $booking->save();
 
+            //$hargaMakanan = [];
             foreach ($request->makanans as $makanan){
                 $bookingMakanan = new OrderMakanan();
                 $bookingMakanan->id_makanan = $makanan['id'];

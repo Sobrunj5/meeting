@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\v1\user;
+namespace App\Http\Controllers\V1\user;
 
 use App\Booking;
 use App\Http\Controllers\Controller;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\asminmitra\Auth;
+namespace App\Http\Controllers\adminmitra\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;

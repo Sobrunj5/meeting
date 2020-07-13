@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Makanan;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Storage;
 
 class MakananController extends Controller
 {
@@ -22,7 +23,7 @@ class MakananController extends Controller
 
     public function index()
     {
-        $makanans = Makanan::where('id_mitra', Auth::user()->id)->get();
+        $makanans = Makanan::where('id_mitra', Auth()->user()->id)->get();
         return view('pages.adminmitra.makanan.index', compact('makanans'));
 
     }
@@ -51,23 +52,30 @@ class MakananController extends Controller
             'harga'     => 'required',
             'deskripsi' => 'required',
             'foto'      => 'required',
-
         ]);
 
         //ini upload foto ke form
-        $image      = $request->file('foto');
-        $filename   = rand().'.'.$image->getClientOriginalExtension();
-        $path       = public_path('uploads/makanan');
-        $image->move($path,$filename);
+        // $image      = $request->file('foto');
+        // $filename   = rand().'.'.$image->getClientOriginalExtension();
+        // $path       = public_path('uploads/makanan');
+        // $image->move($path,$filename);
+
+        $file      = $request->file('foto');
+        $filename   = rand() . '.' . $file->getClientOriginalExtension();
+        $file_path = 'uploads/makanan/' . $filename;
+        Storage::disk('s3')->put($file_path, file_get_contents($file));
+        
 
         //ini store atau menambahkan data ke database dengan tabel yang bernama ruang meeting
 
         $data               = new Makanan();
-        $data->id_mitra     = Auth::user()->id;
+        $data->id_mitra     = auth()->user()->id;
         $data->nama         = $request->nama;
         $data->harga        = $request->harga;
         $data->deskripsi    = $request->deskripsi;
-        $data->foto         = $filename;
+
+        $data->foto = Storage::disk('s3')->url($file_path, $filename);
+        
         $data->jenis        = $request->jenis;
         $data->status       = '1';
         //dd($request->all());
@@ -122,7 +130,7 @@ class MakananController extends Controller
         //ini store atau menambahkan data ke database dengan tabel yang bernama ruang meeting
 
         $data = Makanan::findOrFail($id);
-        $data->id_mitra     = Auth::user()->id;
+        $data->id_mitra     = auth()->user()->id;
         $data->nama         = $request->nama;
         $data->harga        = $request->harga;
         $data->deskripsi    = $request->deskripsi;

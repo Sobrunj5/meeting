@@ -40,7 +40,7 @@ class RuanganController extends Controller
         $hanyaTanggalRequest = Carbon::parse($tanggal)->format('d');
         $hanyaTanggalSekarang = Carbon::parse($tanggalSekarang)->format('d');
 
-        if ($hanyaTanggalRequest >= $hanyaTanggalSekarang){
+        if ($hanyaTanggalRequest == $hanyaTanggalSekarang){
 
             if($jam_mulai < $jamSekarangPlus6Jam){
                 return response()->json([
@@ -57,6 +57,31 @@ class RuanganController extends Controller
 
             $ruangs = RuangMeeting::with(['mitra' => function($mitra){
                 $mitra->with(['makanans' => function($query){
+                    $query->where('jenis', 'gratis')->get();
+                }]);
+            }])->where('status', true)->get();
+
+            $results = [];
+            foreach ($ruangs as $key => $ruang) {
+                if (isset($bookings[$key]->id_ruang) != $ruang->id) {
+                    array_push($results, $ruang);
+                }
+            }
+
+            return response()->json([
+                'message' => 'successfully search by date and time',
+                'status' => true,
+                'data' => $results
+            ]);
+        }else if($hanyaTanggalRequest >= $hanyaTanggalSekarang){
+            $jam_selesai  = Carbon::parse($jam_mulai)->addHours($request->lama)->format('H:i');
+
+            $bookings = Booking::where('tanggal', $tanggal)
+            ->where('jam_mulai', '>=', $jam_mulai)
+            ->where('jam_selesai', '<=', $jam_selesai)->get();
+
+            $ruangs = RuangMeeting::with(['mitra' => function ($mitra) {
+                $mitra->with(['makanans' => function ($query) {
                     $query->where('jenis', 'gratis')->get();
                 }]);
             }])->where('status', true)->get();
