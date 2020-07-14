@@ -25,6 +25,8 @@ class MitraResource extends JsonResource
             "nomor_rekening" =>$this->nomor_rekening,
             "nama_akun_bank" =>$this->nama_akun_bank,
             "alamat"         =>$this->alamat,
+            "lat"           =>$this->latitude,
+            "lng"           =>$this->longitude,
             "status"         =>$this->status,
             "makanan"        => MakananResource::collection($this->makanans)
 

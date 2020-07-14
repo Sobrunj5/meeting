@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3fbdc44-9c8a-4d1e-ac46-245e4aa01861" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/e-meeting.iml" afterPath="$PROJECT_DIR$/.idea/e-meeting.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/adminmitra/boking/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/adminmitra/boking/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -543,12 +540,12 @@
       <workItem from="1594286669557" duration="3631000" />
       <workItem from="1594294007441" duration="6000" />
       <workItem from="1594614657365" duration="3900000" />
-      <workItem from="1594653693085" duration="117000" />
+      <workItem from="1594653693085" duration="981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221632000" />
+    <option name="totallyTimeSpent" value="222496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />

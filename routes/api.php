@@ -35,3 +35,5 @@ Route::post('order/{id}/update', 'V1\user\BookingController@update');
 
 Route::post('snap', 'V1\user\BookingController@snapToken');
 Route::post('snap/charge', 'V1\user\BookingController@snapToken');
+
+Route::get('partner/all', 'V1\user\MitraController@getPartners');
