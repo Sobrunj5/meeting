@@ -29,9 +29,9 @@
                                 <th> Jam</th>
                                 <th> Harga</th>
                                 <th> Total</th>
-                                <th> Catatan Khusus</th>
-                                <th> Total</th>
-                                <th> Action </th>
+                                <th> Action</th>
+                                {{--<th> Total</th>--}}
+                                {{--<th> Action </th>--}}
                             </tr>
                         </thead>
                         <tbody>
