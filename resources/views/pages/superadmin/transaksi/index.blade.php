@@ -26,14 +26,16 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($datas as $data)
                             <tr class="odd gradeX">
-                                <td>1</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$data->user->nama}}</td>
+                                <td>{{$data->nama->mitra}}</td>
+                                <td>{{$data->nama_tempat}}</td>
+                                <td>{{$data->tanggal}}</td>
                                 <td> </td>
                             </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\superadmin;
 
+use App\Booking;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class DataTransaksiController extends Controller
      */
     public function index()
     {
-        return view('pages.superadmin.transaksi.index');
+        $datas = Booking::all();
+        return view('pages.superadmin.transaksi.index', compact('datas'));
 
     }
 
@@ -36,7 +38,15 @@ class DataTransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //ini validasi di form
+        $this->validate($request,[
+            'nama_mitra'    =>'required',
+        ]);
+
+
+        $data               = new Mitra();
+        $data->id_mitra     = Auth::user()->id;
+        $data->nama_mitra   = $request->nama_mitra;
     }
 
     /**
@@ -83,4 +93,10 @@ class DataTransaksiController extends Controller
     {
         //
     }
+
+
+
 }
+
+
+

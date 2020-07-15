@@ -27,11 +27,12 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($datas as $data)
                             <tr class="odd gradeX">
-                                <td>1</td>
-                                <td>aku</td>
-                                <td>akusayang@gmail.com</td>
-                                <td>1500003456</td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$data->nama}}</td>
+                                <td>{{$data->email}}</td>
+                                <td>{{$data->no_hp}}</td>
                                 <td>
                                     <button type="button" class="btn btn-circle btn-info">User</button>
                                 </td>
@@ -42,6 +43,7 @@
                                     <button type="button" class="btn btn-circle btn-danger">Delete</button>
                                 </td>
                             </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\superadmin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
 class DataUserController extends Controller
@@ -14,7 +15,8 @@ class DataUserController extends Controller
      */
     public function index()
     {
-        return view('pages.superadmin.user.index');
+        $datas = User::all();
+        return view('pages.superadmin.user.index',compact('datas'));
 
     }
 
