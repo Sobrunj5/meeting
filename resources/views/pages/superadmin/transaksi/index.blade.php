@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="card card-box">
                 <div class="card-head">
-                    <header>Data Mitra</header>
+                    <header>Data Transaksi</header>
                 </div>
                 <div class="card-body ">
                     <div class="table-scrollable">
@@ -30,7 +30,7 @@
                             <tr class="odd gradeX">
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$data->user->nama}}</td>
-                                <td>{{$data->nama_mitra}}</td>
+                                <td>{{$data->mitra->nama_mitra}}</td>
                                 <td>{{$data->ruang->nama_tempat}}</td>
                                 <td>{{$data->tanggal}}</td>
                                 <td> </td>
