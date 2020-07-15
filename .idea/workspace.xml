@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a3fbdc44-9c8a-4d1e-ac46-245e4aa01861" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/superadmin/DataTransaksiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/superadmin/DataTransaksiController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/superadmin/DataUserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/superadmin/DataUserController.php" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/superadmin/transaksi/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/superadmin/transaksi/index.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/superadmin/user/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/superadmin/user/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/auth_adminmitra/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="75" column="16" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+              <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
               <folding>
                 <marker date="1594298315140" expanded="true" signature="752:811" ph="..." />
                 <marker date="1594298315140" expanded="true" signature="886:956" ph="..." />
@@ -49,6 +46,45 @@
                 <marker date="1594298315140" expanded="true" signature="4099:4143" ph="..." />
                 <marker date="1594298315140" expanded="true" signature="4191:4244" ph="..." />
                 <marker date="1594298315140" expanded="true" signature="4273:4318" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/superadmin/transaksi/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="31" column="45" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+              <folding>
+                <marker date="1594811348110" expanded="true" signature="9:31" ph="..." />
+                <marker date="1594811348110" expanded="true" signature="42:51" ph="..." />
+                <marker date="1594811348110" expanded="true" signature="1160:1175" ph="..." />
+                <marker date="1594811348110" expanded="true" signature="1267:1274" ph="..." />
+                <marker date="1594811348110" expanded="true" signature="1267:1283" ph="..." />
+                <marker date="1594811348110" expanded="true" signature="1329:1340" ph="..." />
+                <marker date="1594811348110" expanded="true" signature="1386:1397" ph="..." />
+                <marker date="1594811348110" expanded="true" signature="1386:1403" ph="..." />
+                <marker date="1594811348110" expanded="true" signature="1449:1467" ph="..." />
+                <marker date="1594811348110" expanded="true" signature="1513:1527" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/superadmin/user/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+              <folding>
+                <marker date="1594804575132" expanded="true" signature="9:31" ph="..." />
+                <marker date="1594804575132" expanded="true" signature="42:51" ph="..." />
+                <marker date="1594804575132" expanded="true" signature="1223:1238" ph="..." />
+                <marker date="1594804575132" expanded="true" signature="1330:1346" ph="..." />
+                <marker date="1594804575132" expanded="true" signature="1392:1403" ph="..." />
+                <marker date="1594804575132" expanded="true" signature="1449:1461" ph="..." />
+                <marker date="1594804575132" expanded="true" signature="1507:1519" ph="..." />
               </folding>
             </state>
           </provider>
@@ -142,9 +178,9 @@
         <option value="$PROJECT_DIR$/resources/views/pages/superadmin/mitra/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/adminmitra/boking/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/superadmin/DataTransaksiController.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/superadmin/transaksi/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/superadmin/DataUserController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/superadmin/user/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/superadmin/transaksi/index.blade.php" />
       </list>
     </option>
   </component>
@@ -283,6 +319,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -298,73 +336,51 @@
             <path>
               <item name="e-meeting" type="b2602c69:ProjectViewProjectNode" />
               <item name="e-meeting" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="e-meeting" type="b2602c69:ProjectViewProjectNode" />
               <item name="e-meeting" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="e-meeting" type="b2602c69:ProjectViewProjectNode" />
               <item name="e-meeting" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="adminmitra" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="e-meeting" type="b2602c69:ProjectViewProjectNode" />
               <item name="e-meeting" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="adminmitra" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Auth" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="e-meeting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="e-meeting" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="superadmin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="e-meeting" type="b2602c69:ProjectViewProjectNode" />
               <item name="e-meeting" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="superadmin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="transaksi" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="e-meeting" type="b2602c69:ProjectViewProjectNode" />
               <item name="e-meeting" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="e-meeting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="e-meeting" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="auth_adminmitra" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="e-meeting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="e-meeting" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="auth_adminmitra" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="passwords" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="superadmin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -491,16 +507,18 @@
       <workItem from="1594653693085" duration="981000" />
       <workItem from="1594796048061" duration="6823000" />
       <workItem from="1594808120018" duration="908000" />
+      <workItem from="1594810648777" duration="696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230227000" />
+    <option name="totallyTimeSpent" value="230923000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34568834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35098335" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -839,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,9 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#51#67#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -894,7 +906,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/adminmitra/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth_adminmitra/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+          <folding>
+            <marker date="1594298315140" expanded="true" signature="752:811" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="886:956" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="1002:1057" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="1152:1193" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="1521:1556" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="1658:1688" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="1816:1848" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="1875:1885" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="4099:4143" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="4191:4244" ph="..." />
+            <marker date="1594298315140" expanded="true" signature="4273:4318" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -916,46 +955,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/superadmin/transaksi/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="30" column="36" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="56" />
+        <state relative-caret-position="272">
+          <caret line="31" column="45" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
           <folding>
-            <marker date="1594803930546" expanded="true" signature="9:31" ph="..." />
-            <marker date="1594803930546" expanded="true" signature="42:51" ph="..." />
-            <marker date="1594803930546" expanded="true" signature="1160:1175" ph="..." />
-            <marker date="1594803930546" expanded="true" signature="1267:1274" ph="..." />
-            <marker date="1594803930546" expanded="true" signature="1267:1283" ph="..." />
-            <marker date="1594803930546" expanded="true" signature="1329:1346" ph="..." />
-            <marker date="1594803930546" expanded="true" signature="1392:1404" ph="..." />
-            <marker date="1594803930546" expanded="true" signature="1392:1410" ph="..." />
-            <marker date="1594803930546" expanded="true" signature="1456:1474" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/adminmitra/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth_adminmitra/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="75" column="16" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
-          <folding>
-            <marker date="1594298315140" expanded="true" signature="752:811" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="886:956" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="1002:1057" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="1152:1193" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="1521:1556" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="1658:1688" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="1816:1848" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="1875:1885" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="4099:4143" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="4191:4244" ph="..." />
-            <marker date="1594298315140" expanded="true" signature="4273:4318" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="9:31" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="42:51" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="1160:1175" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="1267:1274" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="1267:1283" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="1329:1340" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="1386:1397" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="1386:1403" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="1449:1467" ph="..." />
+            <marker date="1594811348110" expanded="true" signature="1513:1527" ph="..." />
           </folding>
         </state>
       </provider>
