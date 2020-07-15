@@ -29,9 +29,9 @@
                             @foreach($datas as $data)
                             <tr class="odd gradeX">
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$data->nama}}</td>
+                                <td>{{$data->user->nama}}</td>
                                 <td>{{$data->nama_mitra}}</td>
-                                <td>{{$data->nama_tempat}}</td>
+                                <td>{{$data->ruang->nama_tempat}}</td>
                                 <td>{{$data->tanggal}}</td>
                                 <td> </td>
                             </tr>
