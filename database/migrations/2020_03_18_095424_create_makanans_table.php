@@ -17,7 +17,7 @@ class CreateMakanansTable extends Migration
             $table->increments('id');
             $table->integer('id_mitra')->unsigned();
             $table->string('nama');
-            $table->integer('harga');
+            $table->integer('harga')->nullable();
             $table->string('deskripsi');
             $table->text('foto')->nullable();
             $table->string('jenis');

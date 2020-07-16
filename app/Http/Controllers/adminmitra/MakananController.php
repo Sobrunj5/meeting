@@ -49,7 +49,6 @@ class MakananController extends Controller
         //ini validasi di form
         $this->validate($request,[
             'nama'      =>'required',
-            'harga'     => 'required',
             'deskripsi' => 'required',
             'foto'      => 'required',
         ]);
@@ -132,7 +131,7 @@ class MakananController extends Controller
         $data = Makanan::findOrFail($id);
         $data->id_mitra     = auth()->user()->id;
         $data->nama         = $request->nama;
-        $data->harga        = $request->harga;
+        $data->harga         = $request->harga;
         $data->deskripsi    = $request->deskripsi;
         $data->jenis        = $request->jenis;
 

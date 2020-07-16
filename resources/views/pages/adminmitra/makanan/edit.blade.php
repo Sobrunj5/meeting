@@ -50,7 +50,7 @@
                                 </label>
                                 <div class="col-md-4">
                                     <div class="input-icon right">
-                                        <select name="jenis" class="form-control">
+                                        <select name="jenis" class="form-control" id="jenis">
                                             <option value="gratis">Gratis</option>
                                             <option value="bayar">Bayar</option>
                                         </select>
@@ -59,13 +59,13 @@
                             </div>
                             <div class="form-group row">
                                 <label class="control-label col-md-3">Harga
-                                    <span class="required"> * </span>
+
                                 </label>
                                 <div class="col-md-4">
                                     <div class="input-icon right">
                                         <i class="fa"></i>
                                         <input class="form-control {{$errors->has('harga')?'is-invalid':''}}"
-                                               name="harga" type="text" value="{{$data->harga}}" />
+                                               name="harga" type="text" value="{{$data->harga}}" {{$data->harga ? '' : 'disabled'}} />
                                         @if ($errors->has('harga'))
                                             <span class="invalid-feedback" role="alert">
                                         <p><b>{{ $errors->first('harga') }}</b></p>
@@ -122,13 +122,28 @@
             </div>
         </div>
     </div>
+    <script>
+        const  jenis = document.querySelector('#jenis');
+        const  harga = document.querySelector('input[name="harga"');
+
+        jenis.addEventListener('change', function () {
+            // console.log(this.value)
+            if(this.value === 'gratis'){
+                harga.disabled = true;
+                harga.value = '';
+
+            }else {
+                harga.disabled = false
+            }
+        })
+
+        var loadfile = function (event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
 @endsection
 
 
-<script>
-    var loadfile = function (event) {
-        var output = document.getElementById('output');
-        output.src = URL.createObjectURL(event.target.files[0]);
-    };
-</script>
+
 
