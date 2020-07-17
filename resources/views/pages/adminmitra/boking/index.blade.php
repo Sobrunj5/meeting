@@ -45,9 +45,9 @@
                                 <td>{{ $data->jam_mulai }}</td>
                                 <td>{{ $data->harga }}</td>
                                 <td>{{ $data->total_bayar }}</td>
-                                @foreach ($data->makanans as $makanan)
-                                <td>{{ $makanan->makanan->nama}}</td>
-                                @endforeach
+                                {{--@foreach ($data->makanans as $makanan)--}}
+                                {{--<td>{{ $makanan->makanan->nama}}</td>--}}
+                                {{--@endforeach--}}
                                 <td>
                                     <a href="{{ route('booking.verifikasi', $data->id) }}"
                                         class="btn default btn-outline btn-circle btn-sm">Konfirmasi</a>
