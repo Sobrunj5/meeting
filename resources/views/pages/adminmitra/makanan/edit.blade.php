@@ -101,7 +101,7 @@
                                         <input type="hidden" name="old_foto" value="{{$data->foto}}"/>
                                         <input type="file" class="form-control {{$errors->has('foto')?'is-invalid':''}}"
                                                name="foto" onchange="loadfile(event)" />
-                                        <img id="output" class="img-fluid" height="100" width="100" src="{{asset('uploads/makanan/'.$data->foto)}}">
+                                        <img id="output" class="img-fluid" height="100" width="100" src="{{ url($data->foto) }}">
                                         @if ($errors->has('foto'))
                                             <span class="invalid-feedback" role="alert">
                                         <p><b>{{ $errors->first('foto') }}</b></p>

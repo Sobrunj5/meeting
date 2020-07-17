@@ -43,7 +43,7 @@
                                     <td>{{$makanan->nama}}</td>
                                     <td>Rp. {{number_format($makanan->harga, 0,',','.')}}</td>
                                     <td>{{$makanan->deskripsi}}</td>
-                                    <td><img src="{{ asset('uploads/makanan/'.$makanan->foto) }}" width="150" height="159" alt=""></td>
+                                    <td><img src="{{ url($makanan->foto) }}" width="150" height="159" alt=""></td>
                                     <td>
                                         <a href="{{route('makanan.edit', $makanan->id)}}"
                                            onclick="return confirm('Apakah Anda akan edit data ini?')" type="button" class="btn default btn-outline btn-circle m-b-10">Edit</a>
