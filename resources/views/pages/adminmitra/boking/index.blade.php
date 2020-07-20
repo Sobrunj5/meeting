@@ -29,6 +29,7 @@
                                 <th> Jam</th>
                                 <th> Harga</th>
                                 <th> Total</th>
+                                <th> Status</th>
                                 <th> Action</th>
                                 {{--<th> Total</th>--}}
                                 {{--<th> Action </th>--}}
@@ -45,7 +46,9 @@
                                     <td>{{ $data->jam_mulai }}</td>
                                     <td>{{ $data->harga }}</td>
                                     <td>{{ $data->total_bayar }}</td>
-                                    @if($data->verifikasi == '2' && $data->status == 'none')
+                                    @if($data->verifikasi == '1')
+                                        <td><span>belum di verifikasi</span></td>
+                                    @elseif($data->verifikasi == '2' && $data->status == 'none')
                                         <td><span>sudah diverifikasi dan belum dibayarkan</span></td>
                                     @elseif($data->verifikasi == '2' && $data->status == 'pending')
                                         <td><span>sudah diverifikasi dan sudah dibayarkan</span></td>

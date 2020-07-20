@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a3fbdc44-9c8a-4d1e-ac46-245e4aa01861" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/adminmitra/boking/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/adminmitra/boking/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/adminmitra/boking/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="47" column="92" lean-forward="true" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
+              <caret line="47" column="80" lean-forward="true" selection-start-line="47" selection-start-column="80" selection-end-line="47" selection-end-column="80" />
               <folding>
                 <marker date="1595249913496" expanded="true" signature="9:31" ph="..." />
                 <marker date="1595249913496" expanded="true" signature="42:51" ph="..." />
@@ -96,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BokingMasukController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BokingMasukController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/adminmitra/BokingMasukController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="24" column="82" lean-forward="true" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
+              <caret line="24" column="82" lean-forward="false" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -167,7 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Events/AdminMitra/Auth/AdminMitraActivationEmail.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/V1/user/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/Procfile" />
@@ -218,6 +216,7 @@
         <option value="$PROJECT_DIR$/resources/views/pages/superadmin/meeting/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/superadmin/user/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/adminmitra/boking/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/adminmitra/BokingMasukController.php" />
       </list>
     </option>
   </component>
@@ -531,12 +530,12 @@
       <workItem from="1594959589305" duration="835000" />
       <workItem from="1594973526969" duration="3337000" />
       <workItem from="1595238133425" duration="1254000" />
-      <workItem from="1595247668889" duration="2223000" />
+      <workItem from="1595247668889" duration="2490000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244150000" />
+    <option name="totallyTimeSpent" value="244417000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -921,14 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/adminmitra/BokingMasukController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="82" lean-forward="true" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/superadmin/transaksi/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -977,7 +968,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/pages/adminmitra/boking/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="47" column="92" lean-forward="true" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
+          <caret line="47" column="80" lean-forward="true" selection-start-line="47" selection-start-column="80" selection-end-line="47" selection-end-column="80" />
           <folding>
             <marker date="1595249913496" expanded="true" signature="9:31" ph="..." />
             <marker date="1595249913496" expanded="true" signature="42:51" ph="..." />
@@ -994,6 +985,14 @@
             <marker date="1595249913496" expanded="true" signature="2840:2880" ph="..." />
             <marker date="1595249913496" expanded="true" signature="3043:3078" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/adminmitra/BokingMasukController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="82" lean-forward="false" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
