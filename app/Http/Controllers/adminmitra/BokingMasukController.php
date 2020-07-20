@@ -22,8 +22,7 @@ class BokingMasukController extends Controller
 
     public function index()
     {
-        $datas = Booking::where('id_mitra', Auth::guard('adminmitra')->user()->id)
-        ->where('verifikasi', '1')->get();
+        $datas = Booking::where('id_mitra', Auth::guard('adminmitra')->user()->id)->get();
         return view('pages.adminmitra.boking.index', compact('datas'));
 
     }
