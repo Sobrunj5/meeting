@@ -71,7 +71,8 @@
                                     </div>
                                     <div class="col-6 mt-2">
                                         <label> Latitude </label>
-                                        <input type="text" class="form-control" value="{{Auth::guard('adminmitra')->user()->latitude}}" id="latitude" name="latitude">
+                                        <input type="text" class="form-control" value="{{Auth::guard('adminmitra')->user()->latitude}}" id="latitude" 
+                                        name="latitude">
                                     </div>
                                     <div class="col-6 mt-2">
                                         <label> Longitude </label>
