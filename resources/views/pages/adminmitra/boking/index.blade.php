@@ -47,7 +47,7 @@
                                     <td>{{ $data->total_bayar }}</td>
                                     @if($data->verifikasi == '2' && $data->status == 'none')
                                         <td><span>sudah diverifikasi dan belum dibayarkan</span></td>
-                                    @else($data->verifikasi == '2' && $data->status == 'pending')
+                                    @elseif($data->verifikasi == '2' && $data->status == 'pending')
                                         <td><span>sudah diverifikasi dan sudah dibayarkan</span></td>
                                     @endif
                                     {{--@foreach ($data->makanans as $makanan)--}}
