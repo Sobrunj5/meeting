@@ -48,20 +48,23 @@
                                     <td>{{ $data->total_bayar }}</td>
                                     @if($data->verifikasi == '1')
                                         <td><span>belum di verifikasi</span></td>
-                                    @elseif($data->verifikasi == '2' && $data->status == 'none')
-                                        <td><span>sudah diverifikasi dan belum dibayarkan</span></td>
-                                    @elseif($data->verifikasi == '2' && $data->status == 'pending')
-                                        <td><span>sudah diverifikasi dan sudah dibayarkan</span></td>
+                                        <td>
+                                            <a href="{{ route('booking.verifikasi', $data->id) }}"
+                                               class="btn default btn-outline btn-circle btn-sm">Konfirmasi</a>
+                                            <a href="{{ route('booking.tolak', $data->id) }}"
+                                               class="btn default btn-outline btn-circle btn-sm">Tolak</a>
+                                        </td>
+                                    @else
+
+                                        @if($data->verifikasi == '2' && $data->status == 'none')
+                                            <td><span>sudah diverifikasi dan belum dibayarkan</span></td>
+                                        @elseif($data->verifikasi == '2' && $data->status == 'pending')
+                                            <td><span>sudah diverifikasi dan sudah dibayarkan</span></td>
+                                        @endif
                                     @endif
                                     {{--@foreach ($data->makanans as $makanan)--}}
                                     {{--<td>{{ $makanan->makanan->nama}}</td>--}}
                                     {{--@endforeach--}}
-                                    <td>
-                                        <a href="{{ route('booking.verifikasi', $data->id) }}"
-                                           class="btn default btn-outline btn-circle btn-sm">Konfirmasi</a>
-                                        <a href="{{ route('booking.tolak', $data->id) }}"
-                                           class="btn default btn-outline btn-circle btn-sm">Tolak</a>
-                                    </td>
 
                                 </tr>
                             @endforeach
