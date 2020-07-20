@@ -127,7 +127,7 @@
             // console.log(this.value)
             if(this.value === 'gratis'){
                 harga.disabled = true;
-                harga.value = '';
+                harga.value = '0';
 
             }else {
                 harga.disabled = false
