@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group row">
                                 <label class="control-label col-md-3">Harga
-
+                                    <span class="required"> * </span>
                                 </label>
                                 <div class="col-md-4">
                                     <div class="input-icon right">

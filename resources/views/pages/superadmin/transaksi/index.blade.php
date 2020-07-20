@@ -33,7 +33,11 @@
                                 <td>{{$data->mitra->nama_mitra}}</td>
                                 <td>{{$data->ruang->nama_tempat}}</td>
                                 <td>{{$data->tanggal}}</td>
-                                <td> </td>
+                                <td>
+                                    <a href="{{route('datamitra.show', $data->id)}}"
+                                       onclick="return confirm('Apakah Anda ingin melihat data ini?')"type="button" class="btn default btn-outline btn-circle m-b-10">Detail</a>
+
+                                </td>
                             </tr>
                                 @endforeach
                             </tbody>
