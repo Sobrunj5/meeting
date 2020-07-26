@@ -21,7 +21,7 @@
                                 <th> Nama </th>
                                 <th> Email</th>
                                 <th> No Hp </th>
-                                <th> Jenis User </th>
+                                {{--<th> Jenis User </th>--}}
                                 <th> Keterangan </th>
                                 <th> Action </th>
                             </tr>
@@ -33,9 +33,9 @@
                                 <td>{{$data->nama}}</td>
                                 <td>{{$data->email}}</td>
                                 <td>{{$data->no_hp}}</td>
-                                <td>
-                                    <button type="button" class="btn btn-circle btn-info">User</button>
-                                </td>
+                                {{--<td>--}}
+                                    {{--<button type="button" class="btn btn-circle btn-info">User</button>--}}
+                                {{--</td>--}}
                                 <td>
                                     <button type="button" class="btn btn-circle btn-success">Verified</button>
                                 </td>
