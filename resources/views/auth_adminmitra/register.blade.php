@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-lg-6 p-t-20">
                         <div class="wrap-input100 validate-input" data-validate="Enter password again">
-                            <input class="input100" type="text" name="no_hp" placeholder="No Hp">
+                            <input class="input100" type="number" name="no_hp" placeholder="No Hp">
                             <span class="focus-input100" data-placeholder="&#xf2be;"></span>
                         </div>
                     </div>
