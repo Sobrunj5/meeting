@@ -10,7 +10,7 @@ Route::group(['prefix' =>'user'],function (){
     Route::get('email/verify/{id}', 'V1\user\Auth\VerificationController@verify')->name('api.verification.verify');
     Route::get('email/resend', 'V1\user\Auth\VerificationController@resend')->name('api.verification.resend');
     Route::get('profile', 'V1\user\UserController@profile');
-    Route::post('profile/profile', 'V1\user\UserController@updateProfile');
+    Route::post('profile/profile', 'V1\user\UserController@update');
 });
 
 Route::get('ruangmeeting','V1\user\RuanganController@getRuangMeeting');

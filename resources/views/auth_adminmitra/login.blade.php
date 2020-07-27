@@ -64,11 +64,11 @@
                         Login
                     </button>
                 </div>
-                <div class="text-center p-t-30">
+                {{-- <div class="text-center p-t-30">
                     <a class="txt1" href="#">
                         Forgot Password?
                     </a>
-                </div>
+                </div> --}}
             </form>
         </div>
     </div>
