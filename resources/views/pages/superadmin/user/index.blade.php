@@ -22,7 +22,7 @@
                                 <th> Email</th>
                                 <th> No Hp </th>
                                 {{--<th> Jenis User </th>--}}
-                                <th> Keterangan </th>
+                                {{-- <th> Keterangan </th> --}}
                                 <th> Action </th>
                             </tr>
                             </thead>
@@ -36,9 +36,9 @@
                                 {{--<td>--}}
                                     {{--<button type="button" class="btn btn-circle btn-info">User</button>--}}
                                 {{--</td>--}}
-                                <td>
+                                {{-- <td>
                                     <button type="button" class="btn btn-circle btn-success">Verified</button>
-                                </td>
+                                </td> --}}
                                 <td>
                                     <button type="button" class="btn btn-circle btn-danger">Delete</button>
                                 </td>
