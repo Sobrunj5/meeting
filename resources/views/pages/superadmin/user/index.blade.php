@@ -45,6 +45,7 @@
                             </tr>
                                 @endforeach
                             </tbody>
+                            </table>
                             @foreach($datas as $key =>$data)
                                 @if ($data->verify == '2' && $data->status == 'none')
                                     <td><span class="badge badge-success">sudah di konfirmasi dan belum dibayarkan</span></td>
@@ -56,7 +57,6 @@
                                     <td><span class="badge badge-warning">belum di konfirmasi</span></td>
                                 @endif
                             @endforeach
-                        </table>
                     </div>
                 </div>
             </div>
