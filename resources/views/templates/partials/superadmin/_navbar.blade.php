@@ -27,10 +27,10 @@
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
-                        <li>
+                        {{-- <li>
                             <a href="user_profile.html">
                                 <i class="icon-user"></i> Profile </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{route('superadmin.logout')}}">
                                 <i class="icon-logout"></i> Log Out </a>
