@@ -40,7 +40,7 @@
                                     <button type="button" class="btn btn-circle btn-success">Verified</button>
                                 </td> --}}
                                 <td>
-                                    <button type="button" class="btn btn-circle btn-danger">sukses</button>
+                                    <button type="button" class="btn btn-circle btn-success">sukses</button>
                                 </td>
                             </tr>
                                 @endforeach
