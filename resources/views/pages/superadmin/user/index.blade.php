@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="card card-box">
                 <div class="card-head">
-                    <header>Data Ruang Meeting</header>
+                    <header>Data User</header>
                 </div>
                 <div class="card-body ">
                     <div class="table-scrollable">
@@ -40,7 +40,7 @@
                                     <button type="button" class="btn btn-circle btn-success">Verified</button>
                                 </td> --}}
                                 <td>
-                                    <button type="button" class="btn btn-circle btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-circle btn-danger">sukses</button>
                                 </td>
                             </tr>
                                 @endforeach
