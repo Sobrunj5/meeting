@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OrderMakanan extends Model
+class BookingDetails extends Model
 {
     public function makanan()
     {

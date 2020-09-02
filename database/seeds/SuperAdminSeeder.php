@@ -18,7 +18,7 @@ class SuperAdminSeeder extends Seeder
         $admin->no_hp    = '083861627290';
         $admin->email    = 'sobrunj@gmail.com';
         $admin->password =  Hash::make('123456789');
-        $admin->save ();
+        $admin->save();
 
     }
 }

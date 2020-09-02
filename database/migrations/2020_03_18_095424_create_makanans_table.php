@@ -16,13 +16,15 @@ class CreateMakanansTable extends Migration
         Schema::create('makanans', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_mitra')->unsigned();
-            $table->string('nama');
+            $table->string('nama', 50);
             $table->integer('harga')->nullable();
             $table->string('deskripsi');
             $table->text('foto')->nullable();
             $table->string('jenis');
             $table->boolean('status')->default(true);
             $table->timestamps();
+
+            $table->foreign('id_mitra')->references('id')->on('mitras')->onDelete('CASCADE');
         });
     }
 

@@ -15,19 +15,12 @@ class CreateMitrasTable extends Migration
     {
         Schema::create('mitras', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_mitra');
-            $table->string('email')->unique();
-            $table->string('no_hp');
-            $table->string('password');
-            $table->string('nama_pemilik')->nullable();
-            $table->string('nama_bank')->nullable();
-            $table->string('nomor_rekening')->nullable();
-            $table->string('nama_akun_bank')->nullable();
-            $table->text('alamat')->nullable();
-            $table->boolean('status')->default(true);
+            $table->string('nama_mitra', 50);
+            $table->string('email', 30)->unique();
+            $table->string('no_hp', 13)->unique();
+            $table->string('password', 60);
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('latitude')->nullable();
-            $table->string('longitude')->nullable();
+            $table->boolean('status')->default(true);
             $table->rememberToken();
             $table->timestamps();
         });

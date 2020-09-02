@@ -53,4 +53,9 @@ class Mitra extends Authenticatable
     {
         return $this->hasMany(Makanan::class, 'id_mitra', 'id');
     }
+
+    public function profile()
+    {
+        return $this->hasOne(MitraProfile::class, 'id_mitra', 'id');
+    }
 }

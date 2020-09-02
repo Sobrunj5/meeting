@@ -15,21 +15,16 @@ class MitraResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id"             => $this->id,
-            "nama_mitra"     =>$this->nama_mitra,
-            "email"          =>$this->email,
-            "no_hp"          =>$this->no_hp,
-            "password"       =>$this->password,
-            "nama_pemilik"   =>$this->nama_pemilik,
-            "nama_bank"      =>$this->nama_bank,
-            "nomor_rekening" =>$this->nomor_rekening,
-            "nama_akun_bank" =>$this->nama_akun_bank,
-            "alamat"         =>$this->alamat,
-            "lat"           =>$this->latitude,
-            "lng"           =>$this->longitude,
-            "status"         =>$this->status,
-            "makanan"        => MakananResource::collection($this->makanans)
-
+            "id"            => $this->id,
+            "email"         =>$this->email,
+            "no_hp"         =>$this->no_hp,
+            "status"        => $this->status,
+            "alamat"        =>$this->profile->alamat,
+            "jam_buka"      => date('H:i', strtotime($this->profile->jam_buka)),
+            "jam_tutup"      => date('H:i', strtotime($this->profile->jam_tutup)),
+            "lat"           =>$this->profile->latitude,
+            "lng"           =>$this->profile->longitude,
+            "makanan"       => MakananResource::collection($this->makanans)
         ];
     }
 }

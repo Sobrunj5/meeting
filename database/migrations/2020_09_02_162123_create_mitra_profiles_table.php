@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRuangMeetingsTable extends Migration
+class CreateMitraProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateRuangMeetingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ruang_meetings', function (Blueprint $table) {
+        Schema::create('mitra_profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_mitra')->unsigned();
-            $table->string('nama_tempat', 100)->unique();
-            $table->integer('kapasitas');
-            $table->integer('harga_sewa');
-            $table->text('foto')->nullable();
-            $table->text('keterangan');
-            $table->boolean('status')->default(true);
-            $table->timestamps();
+            $table->time('jam_buka');
+            $table->time('jam_tutup');
+            $table->text('alamat')->nullable();
+            $table->text('latitude')->nullable();
+            $table->text('longitude')->nullable();
 
             $table->foreign('id_mitra')->references('id')->on('mitras')->onDelete('CASCADE');
         });
@@ -35,6 +33,6 @@ class CreateRuangMeetingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ruang_meetings');
+        Schema::dropIfExists('mitra_profiles');
     }
 }
