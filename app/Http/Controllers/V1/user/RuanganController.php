@@ -44,7 +44,7 @@ class RuanganController extends Controller
                 return Response::transform($message, false, (object)[], 400);
             }
 
-            $results = $this->searchDateNow($tanggal, $jam_mulai, $jam_selesai);
+            $results = $this->searchToday($tanggal, $jam_mulai, $jam_selesai);
             $message = 'successfully search by date and time';
             return Response::transform($message, true, $results, 200);
 
@@ -60,7 +60,7 @@ class RuanganController extends Controller
         }
     }
 
-    private function searchDateNow($tanggal, $jam_mulai, $jam_selesai)
+    private function searchToday($tanggal, $jam_mulai, $jam_selesai)
     {
         $bookings = Booking::where('tanggal', $tanggal)
             ->where('jam_mulai', '>=', $jam_mulai)
