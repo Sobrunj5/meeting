@@ -16,7 +16,7 @@ class RuangMeetingResource extends JsonResource
     {
         return [
             "id"            => $this->id,
-            "nama_tempat"   =>$this->nama_mitra,
+            "nama_tempat"   =>$this->nama_tempat,
             "kapasitas"     =>$this->kapasitas,
             "harga_sewa"    =>$this->harga_sewa,
             "foto"          =>$this->foto,

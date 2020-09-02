@@ -28,10 +28,11 @@ class RuanganController extends Controller
 
     public function search(Request $request)
     {
-        $tanggal = $request->tanggal;
-        $jam_mulai = $request->jam_mulai;
-        $jam_selesai = $request->jam_selesai;
-        //$explode = explode(' ', $tanggal_dam_waktu);
+        $explode = explode(" ", $request->tanggal_dan_waktu);
+
+        $tanggal = $explode[0];
+        $jam_mulai = $explode[1];
+        $jam_selesai = Carbon::parse($jam_mulai)->addHours($request->lama);
 
         $jamSekarangPlus6Jam = Carbon::now()->addHours(6)->format('H:i');
         $tanggalSekarang = Carbon::now()->format('Y-m-d');
