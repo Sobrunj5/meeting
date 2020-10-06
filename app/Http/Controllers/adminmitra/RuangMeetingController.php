@@ -61,10 +61,10 @@ class RuangMeetingController extends Controller
         $path       = public_path('uploads/ruangmeeting');
         $image->move($path,$filename);
 
-        $file      = $request->file('foto');
-        $filename   = rand() . '.' . $file->getClientOriginalExtension();
-        $file_path = 'uploads/ruangmeeting/' . $filename;
-        Storage::disk('s3')->put($file_path, file_get_contents($file));
+        // $file      = $request->file('foto');
+        // $filename   = rand() . '.' . $file->getClientOriginalExtension();
+        // $file_path = 'uploads/ruangmeeting/' . $filename;
+        // Storage::disk('s3')->put($file_path, file_get_contents($file));
 
         //ini store atau menambahkan data ke database dengan tabel yang bernama ruang meeting
 
