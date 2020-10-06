@@ -56,10 +56,10 @@ class RuangMeetingController extends Controller
         ]);
 
         //ini upload foto ke form
-        // $image      = $request->file('foto');
-        // $filename   = rand().'.'.$image->getClientOriginalExtension();
-        // $path       = public_path('uploads/ruangmeeting');
-        // $image->move($path,$filename);
+        $image      = $request->file('foto');
+        $filename   = rand().'.'.$image->getClientOriginalExtension();
+        $path       = public_path('uploads/ruangmeeting');
+        $image->move($path,$filename);
 
         $file      = $request->file('foto');
         $filename   = rand() . '.' . $file->getClientOriginalExtension();
@@ -73,9 +73,7 @@ class RuangMeetingController extends Controller
         $data->nama_tempat  = $request->nama_tempat;
         $data->kapasitas    = $request->kapasitas;
         $data->harga_sewa   = $request->harga_sewa;
-
-        $data->foto = Storage::disk('s3')->url($file_path, $filename);
-
+        $data->foto         = $filename;
         $data->keterangan   = $request->keterangan;
         //dd($request->all());
         $data->save();

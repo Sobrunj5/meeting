@@ -54,15 +54,15 @@ class MakananController extends Controller
         ]);
 
         //ini upload foto ke form
-        // $image      = $request->file('foto');
-        // $filename   = rand().'.'.$image->getClientOriginalExtension();
-        // $path       = public_path('uploads/makanan');
-        // $image->move($path,$filename);
+        $image      = $request->file('foto');
+        $filename   = rand().'.'.$image->getClientOriginalExtension();
+        $path       = public_path('uploads/makanan');
+        $image->move($path,$filename);
 
-        $file      = $request->file('foto');
-        $filename   = rand() . '.' . $file->getClientOriginalExtension();
-        $file_path = 'uploads/makanan/' . $filename;
-        Storage::disk('s3')->put($file_path, file_get_contents($file));
+        // $file      = $request->file('foto');
+        // $filename   = rand() . '.' . $file->getClientOriginalExtension();
+        // $file_path = 'uploads/makanan/' . $filename;
+        // Storage::disk('s3')->put($file_path, file_get_contents($file));
         
 
         //ini store atau menambahkan data ke database dengan tabel yang bernama ruang meeting
@@ -72,9 +72,7 @@ class MakananController extends Controller
         $data->nama         = $request->nama;
         $data->harga        = $request->harga;
         $data->deskripsi    = $request->deskripsi;
-
-        $data->foto = Storage::disk('s3')->url($file_path, $filename);
-        
+        $data->foto         = $filename;
         $data->jenis        = $request->jenis;
         $data->status       = '1';
         //dd($request->all());

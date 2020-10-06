@@ -16,15 +16,15 @@ class MitraResource extends JsonResource
     {
         return [
             "id"            => $this->id,
-            "email"         =>$this->email,
+            "nama_mitra"    =>$this->nama_mitra,
             "no_hp"         =>$this->no_hp,
             "status"        => $this->status,
             "alamat"        =>$this->profile->alamat,
             "jam_buka"      => date('H:i', strtotime($this->profile->jam_buka)),
-            "jam_tutup"      => date('H:i', strtotime($this->profile->jam_tutup)),
+            "jam_tutup"     => date('H:i', strtotime($this->profile->jam_tutup)),
             "lat"           =>$this->profile->latitude,
             "lng"           =>$this->profile->longitude,
-            "makanan"       => MakananResource::collection($this->makanans)
+            //"makanan"       => MakananResource::collection($this->makanans)
         ];
     }
 }
