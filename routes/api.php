@@ -26,3 +26,4 @@ Route::post('snap', 'V1\user\BookingController@snapToken');
 Route::post('snap/charge', 'V1\user\BookingController@snapToken');
 
 Route::get('partner/all', 'V1\user\MitraController@getPartners');
+Route::get('partner/promo', 'V1\user\MitraController@getPartnersPromo');
