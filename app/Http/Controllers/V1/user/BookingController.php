@@ -27,19 +27,16 @@ class BookingController extends Controller
     public  function booking(Request $request){
 
         try{
-            $tanggal_dam_waktu = $request->tanggal_dan_waktu;
-            $explode = explode(' ', $tanggal_dam_waktu);
-
-            $tanggal = $explode[0];
-            $jam_mulai = $explode[1];
-            $jam_selesai  = Carbon::parse($jam_mulai)->addHours($request->durasi)->format('H:i');
+            $tanggal = $request->tanggal;
+            $startTime = $request->start_time;
+            $endTime = $request->end_time;
 
             $booking = new Booking();
             $booking->id_user = Auth::guard('api')->user()->id;
             $booking->id_mitra = $request->id_mitra;
             $booking->tanggal = $tanggal;
-            $booking->jam_mulai = $jam_mulai;
-            $booking->jam_selesai = $jam_selesai;
+            $booking->jam_mulai = $startTime;
+            $booking->jam_selesai = $endTime;
             $booking->id_ruang = $request->id_room;
             $booking->harga = $request->harga * $request->durasi;
             $booking->status = "none";
