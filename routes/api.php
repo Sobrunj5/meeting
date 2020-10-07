@@ -25,5 +25,7 @@ Route::post('order/{id}/update', 'V1\user\BookingController@update');
 Route::post('snap', 'V1\user\BookingController@snapToken');
 Route::post('snap/charge', 'V1\user\BookingController@snapToken');
 
-Route::get('partner/all', 'V1\user\MitraController@getPartners');
-Route::get('partner/promo', 'V1\user\MitraController@getPartnersPromo');
+Route::get('partner', 'V1\user\MitraController@getPartners');
+Route::get('room/promo', 'V1\user\RuanganController@promo');
+Route::get('room/{id_partner}','V1\user\RuanganController@roomByPartner');
+Route::get('food/{id_partner}','V1\user\MakananController@makanan');

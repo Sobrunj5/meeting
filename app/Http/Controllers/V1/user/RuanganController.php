@@ -13,6 +13,37 @@ use Illuminate\Http\Request;
 class RuanganController extends Controller
 {
 
+    public function promo()
+    {
+        $rooms = RuangMeeting::all();
+        $res = [];
+        foreach($rooms as $room){
+            if($room->promo){
+                array_push($res, $room);
+            }
+        }
+
+        return Response::transform(
+            'success',
+            true, 
+            RuangMeetingResource::collection(collect($res)),
+            200);
+    }
+
+
+    public function roomByPartner($idPartner)
+    {
+        $rooms = RuangMeeting::where('id_mitra', $idPartner)->get();
+        return Response::transform(
+            'success',
+            true, 
+            RuangMeetingResource::collection($rooms),
+            200);
+    }
+
+
+
+
     public  function getRuangMeeting()
     {
 
@@ -26,7 +57,7 @@ class RuanganController extends Controller
         return Response::transform($message, true, $datas, 200);
     }
 
-    public function search(Request $request)
+    public function searchy(Request $request)
     {
         $explode = explode(" ", $request->tanggal_dan_waktu);
 

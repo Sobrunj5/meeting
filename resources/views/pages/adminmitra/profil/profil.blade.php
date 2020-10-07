@@ -71,62 +71,31 @@
                                     </div>
                                     <div class="col-6 mt-2">
                                         <label> Latitude </label>
-                                        <input type="text" class="form-control" value="{{Auth::guard('adminmitra')->user()->latitude}}" id="latitude" 
-                                        name="latitude">
+                                        <input type="text" class="form-control" id="latitude" name="latitude" 
+                                        value="{{ $user->profile->latitude }}">
                                     </div>
                                     <div class="col-6 mt-2">
                                         <label> Longitude </label>
-                                        <input type="text" class="form-control" value="{{Auth::guard('adminmitra')->user()->longitude}}" id="longitude"
-                                                name="longitude">
+                                        <input type="text" class="form-control" id="longitude" name="longitude" 
+                                        value="{{ $user->profile->longitude }}">
                                     </div>
                                     <div class="col-12 mt-2">
                                         <label> Alamat </label>
                                         <textarea rows="5" class="form-control {{$errors->has('alamat')?'is-invalid':''}}"
-                                                  name="alamat" id="alamat">{{Auth::guard('adminmitra')->user()->alamat}}
-                                            {{old('alamat')}}</textarea>
+                                                  name="alamat" id="alamat"> {{ $user->profile->alamat }} {{old('alamat')}}</textarea>
                                         @if ($errors->has('alamat'))
                                             <span class="invalid-feedback" role="alert">
-                                        <p><b>{{ $errors->first('alamat') }}</b></p>
-                                    </span>
+                                                <p><b>{{ $errors->first('alamat') }}</b></p>
+                                            </span>
                                         @endif
                                     </div>
                                     <div class="col-12 mt-2">
-                                        <label> Nama Pemilik </label>
+                                        <label> Nama Mitra </label>
                                         <input class="form-control {{$errors->has('nama_pemilik')?'is-invalid':''}}"
-                                               name="nama_pemilik" type="text" value="{{Auth::guard('adminmitra')->user()->nama_pemilik}}" value="{{old('nama_pemilik')}}"/>
+                                               name="nama_pemilik" type="text" value="{{$user->nama_mitra}}" value="{{old('nama_pemilik')}}"/>
                                         @if ($errors->has('nama_pemilik'))
                                             <span class="invalid-feedback" role="alert">
                                         <p><b>{{ $errors->first('nama_pemilik') }}</b></p>
-                                    </span>
-                                        @endif
-                                    </div>
-                                    <div class="col-12 mt-2">
-                                        <label> Nama Bank </label>
-                                        <input class="form-control {{$errors->has('nama_bank')?'is-invalid':''}}"
-                                               name="nama_bank" type="text" value="{{Auth::guard('adminmitra')->user()->nama_bank}}" />
-                                        @if ($errors->has('nama_bank'))
-                                            <span class="invalid-feedback" role="alert">
-                                        <p><b>{{ $errors->first('nama_bank') }}</b></p>
-                                    </span>
-                                        @endif
-                                    </div>
-                                    <div class="col-12 mt-2">
-                                        <label> Nomor Rekening </label>
-                                        <input class="form-control {{$errors->has('nomor_rekening')?'is-invalid':''}}"
-                                               name="nomor_rekening" type="number" value="{{Auth::guard('adminmitra')->user()->nomor_rekening}}" />
-                                        @if ($errors->has('nomor_rekening'))
-                                            <span class="invalid-feedback" role="alert">
-                                        <p><b>{{ $errors->first('nomor_rekening') }}</b></p>
-                                    </span>
-                                        @endif
-                                    </div>
-                                    <div class="col-12 mt-2">
-                                        <label> Nama Akun Bank </label>
-                                        <input class="form-control {{$errors->has('nama_akun_bank')?'is-invalid':''}}"
-                                               name="nama_akun_bank" type="text" value="{{Auth::guard('adminmitra')->user()->nama_akun_bank}}" />
-                                        @if ($errors->has('nama_akun_bank'))
-                                            <span class="invalid-feedback" role="alert">
-                                        <p><b>{{ $errors->first('nama_akun_bank') }}</b></p>
                                     </span>
                                         @endif
                                     </div>

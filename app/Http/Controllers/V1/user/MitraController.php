@@ -19,15 +19,4 @@ class MitraController extends Controller
             'data' => MitraResource::collection($partner)
         ]);
     }
-
-    public function getPartnersPromo()
-    {
-        $partner = Mitra::all();
-
-        return response()->json([
-            'message' => 'successfully get partners',
-            'status' => true,
-            'data' => MitraResource::collection($partner)
-        ]);
-    }
 }

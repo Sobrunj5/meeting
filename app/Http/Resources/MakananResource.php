@@ -14,6 +14,13 @@ class MakananResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            "id"        => $this->id,
+            "nama"      => $this->nama,
+            "harga"     => $this->harga,
+            "deskripsi" => $this->deskripsi,
+            "foto"      => $this->foto,
+            "jenis"     => $this->jenis
+        ];
     }
 }

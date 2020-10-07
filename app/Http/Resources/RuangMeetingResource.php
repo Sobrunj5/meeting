@@ -22,7 +22,7 @@ class RuangMeetingResource extends JsonResource
             "foto"          =>$this->foto,
             "keterangan"    =>$this->keterangan,
             "status"        =>$this ->status,
-            "mitra"      => new MitraResource($this->mitra),
+            //"mitra"      => new MitraResource($this->mitra),
         ];
     }
 }

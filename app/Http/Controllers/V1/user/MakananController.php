@@ -3,25 +3,23 @@
 namespace App\Http\Controllers\V1\user;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\MakananResource;
 use App\Makanan;
+use App\Response;
 use Illuminate\Http\Request;
 
 class MakananController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('api');
-    }
-
     public function makanan($id_mitra)
     {
         $makanans = Makanan::where('id_mitra', $id_mitra)
             ->where('jenis', 'bayar')->get();
 
-        return response()->json([
-            'message' => 'successfuly get makanan by mitra',
-            'status' => true,
-            'data' => $makanans
-        ]);
+            return Response::transform(
+                'successfuly get makanan by mitra',
+                true,
+                MakananResource::collection($makanans),
+                200
+            );
     }
 }

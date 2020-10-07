@@ -9,35 +9,31 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfilController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:adminmitra');
+    }
+
     public  function  index ()
     {
-        $datas = Mitra::all();
-        return view('pages.adminmitra.profil.profil', compact('datas'));
+        $user = Auth::guard('adminmitra')->user();
+        return view('pages.adminmitra.profil.profil', compact('user'));
     }
 
     public function updateProfil(Request $request)
     {
-
-
-
-            //ini store atau menambahkan data ke database dengan tabel yang bernama mitras
-
-//        $datas                       = new Mitra();
-        $data                      = Auth::guard('adminmitra')->user();
-        $data->alamat              = $request->alamat;
-        $data->nama_pemilik        = $request->nama_pemilik;
-        $data->nama_bank           = $request->nama_bank;
-        $data->nomor_rekening      = $request->nomor_rekening;
-        $data->nama_akun_bank      = $request->nama_akun_bank;
-        $data->latitude            = $request->latitude;
-        $data->longitude           = $request->longitude;
-
-//        $data->status       = '1';
-        //dd($request->all());
+        $data             = Auth::guard('adminmitra')->user();
+        $data->nama_mitra = $request->nama_pemilik;
         $data->save();
 
+        $data->profile->update([
+            'alamat'    => $request->alamat,
+            'latitude'  => $request->latitude,
+            'longitude'  => $request->longitude,
+        ]);
 
-        //jika sudah menambahkan akan di arahkan ke route ini
+        
         return redirect()->route('profil.index');
     }
 }

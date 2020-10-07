@@ -16,7 +16,7 @@ class CreateRuangMeetingsTable extends Migration
         Schema::create('ruang_meetings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_mitra')->unsigned();
-            $table->string('nama_tempat', 100)->unique();
+            $table->string('nama_tempat', 100);
             $table->integer('kapasitas');
             $table->integer('harga_sewa');
             $table->text('foto')->nullable();

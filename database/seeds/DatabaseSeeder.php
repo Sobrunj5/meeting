@@ -14,5 +14,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(SuperAdminSeeder::class);
         $this->call(MitraSeeder::class);
+        $this->call(FoodSeeder::class);
+        $this->call(RoomSeeder::class);
+        $this->call(PromoSeeder::class);
+
     }
 }
