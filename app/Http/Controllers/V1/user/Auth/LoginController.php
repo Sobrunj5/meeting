@@ -18,23 +18,39 @@ class LoginController extends Controller
 
     public function login(Request $request){
 
-        $this->validate($request, [
-            'email' => 'required|string',
-            'password' => 'required|string|min:6'
-        ]);
+        // $this->validate($request, [
+        //     'email' => 'required|string',
+        //     'password' => 'required|string|min:6'
+        // ]);
 
-        $credential = [
+        $credentialEmail = [
             'email' => $request->email,
             'password' => $request->password,
         ];
 
-        if (Auth::guard('web')->attempt($credential)){
-            $user = Auth::guard('web')->user();
-            return response()->json([
-                'status' => true,
-                'message' => 'Berhasil login',
-                'data' => $user,
-            ], 200);
+        $credentialUname = [
+            'uname' => $request->uname,
+            'password' => $request->password,
+        ];
+
+        if ($request->email) {
+            if (Auth::guard('web')->attempt($credentialEmail)){
+                $user = Auth::guard('web')->user();
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Berhasil login',
+                    'data' => $user,
+                ], 200);
+            }   
+        }else{
+            if (Auth::guard('web')->attempt($credentialUname)){
+                $user = Auth::guard('web')->user();
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Berhasil login',
+                    'data' => $user,
+                ], 200);
+            }
         }
 
         return response()->json([

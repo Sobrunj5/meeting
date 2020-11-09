@@ -50,11 +50,13 @@ class RegisterController extends Controller
             'email' => 'email|required|unique:users',
             'no_hp' => 'required',
             'password' => 'required',
+            'uname' => 'required|unique:users'
         ]);
 
         $data = new User();
         $data->nama = $request->nama;
         $data->email = $request->email;
+        $data->uname = $request->uname;
         $data->no_hp = $request ->no_hp;
         $data->password = Hash::make($request->password);
         $data->api_token = Str::random(80);
