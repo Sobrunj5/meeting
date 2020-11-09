@@ -4,6 +4,7 @@ namespace App\Http\Controllers\V1\user\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,26 +25,35 @@ class LoginController extends Controller
         // ]);
 
         $credentialEmail = [
+            
             'email' => $request->email,
-            'password' => $request->password,
-        ];
-
-        $credentialUname = [
             'uname' => $request->uname,
             'password' => $request->password,
         ];
 
-        if ($request->email) {
-            if (Auth::guard('web')->attempt($credentialEmail)){
+        $getEmail = User::where('email', $request->email)->first();
+        $getUname = User::where('uname', $request->email)->first();
+        if ($getEmail) {
+            $credential = [
+                'email' => $request->email,
+                'password' => $request->password,
+            ];
+
+            if (Auth::guard('web')->attempt($credential)){
                 $user = Auth::guard('web')->user();
                 return response()->json([
                     'status' => true,
                     'message' => 'Berhasil login',
                     'data' => $user,
                 ], 200);
-            }   
-        }else{
-            if (Auth::guard('web')->attempt($credentialUname)){
+            }
+        }elseif($getUname){
+            $credential = [
+                'uname' => $request->email,
+                'password' => $request->password,
+            ];
+
+            if (Auth::guard('web')->attempt($credential)){
                 $user = Auth::guard('web')->user();
                 return response()->json([
                     'status' => true,
@@ -52,6 +62,7 @@ class LoginController extends Controller
                 ], 200);
             }
         }
+        
 
         return response()->json([
             'status' => false,
