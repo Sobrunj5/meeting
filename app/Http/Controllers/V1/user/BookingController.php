@@ -60,7 +60,7 @@ class BookingController extends Controller
             return response()->json([
                 'message' => 'success',
                 'status' => true,
-                //'data' => $request->all()
+                'data' => (object)[]
             ]);
 
         }catch (\Exception $exception){
