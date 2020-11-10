@@ -133,4 +133,14 @@ class BookingController extends Controller
             'status' => true
         ]);
     }
+
+    public function cancel($id)
+    {
+        Booking::where('id', $id)->update(['verifikasi', '0']);
+        return response()->json([
+            'message' => 'berhasil cancel order',
+            'status' => true,
+            'data' => (object)[]
+        ]);
+    }
 }
