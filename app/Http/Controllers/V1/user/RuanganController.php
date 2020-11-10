@@ -17,7 +17,8 @@ class RuanganController extends Controller
     {
         $rooms = RuangMeeting::all();
         $res = [];
-        foreach($rooms as $room){
+        foreach($rooms as $room) {
+
             if($room->promo){
                 array_push($res, $room);
             }
@@ -34,10 +35,17 @@ class RuanganController extends Controller
     public function roomByPartner($idPartner)
     {
         $rooms = RuangMeeting::where('id_mitra', $idPartner)->get();
+        $res = [];
+        foreach($rooms as $room) {
+
+            if(!$room->promo){
+                array_push($res, $room);
+            }
+        }
         return Response::transform(
             'success',
-            true, 
-            RuangMeetingResource::collection($rooms),
+            true,
+            RuangMeetingResource::collection(collect($res)),
             200);
     }
 

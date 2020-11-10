@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class RuangMeeting extends Model
 {
@@ -14,6 +15,6 @@ class RuangMeeting extends Model
 
     public function promo()
     {
-        return $this->belongsTo(Promo::class, 'id_ruang', 'id');
+        return $this->hasOne(Promo::class, 'id_ruang', 'id');
     }
 }

@@ -28,6 +28,8 @@ Route::post('snap/charge', 'V1\user\BookingController@snapToken');
 
 Route::get('partner', 'V1\user\MitraController@getPartners');
 Route::post('partner/search', 'V1\user\MitraController@search');
+
 Route::get('room/promo', 'V1\user\RuanganController@promo');
 Route::get('room/{id_partner}','V1\user\RuanganController@roomByPartner');
+
 Route::get('food/{id_partner}','V1\user\MakananController@makanan');
