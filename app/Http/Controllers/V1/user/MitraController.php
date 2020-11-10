@@ -19,4 +19,18 @@ class MitraController extends Controller
             'data' => MitraResource::collection($partner)
         ]);
     }
+
+    public function search(Request $request)
+    {
+        $partners = Mitra::whereHas('profile', function($profile) use($request) {
+            $profile->whereTime('jam_buka', '<=', $request->start_time)
+            ->whereTime('jam_tutup', '>=', $request->end_time);
+        })->get();
+
+        return response()->json([
+            'message' => 'successfully search partners',
+            'status' => true,
+            'data' => MitraResource::collection($partners)
+        ]);
+    }
 }
