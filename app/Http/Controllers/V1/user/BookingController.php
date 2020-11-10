@@ -3,15 +3,13 @@
 namespace App\Http\Controllers\V1\user;
 
 use App\Booking;
+use App\BookingDetails;
 use App\Http\Controllers\Controller;
-use App\OrderMakanan;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Midtrans\Snap;
 use App\Http\Controllers\Midtrans\Config;
 use App\Http\Resources\BookingResource;
-use Laravel\Ui\Presets\React;
 
 class BookingController extends Controller
 {
@@ -44,7 +42,8 @@ class BookingController extends Controller
 
             //$hargaMakanan = [];
             foreach ($request->makanans as $makanan){
-                $bookingMakanan = new OrderMakanan();
+                
+                $bookingMakanan = new BookingDetails();
                 $bookingMakanan->id_makanan = $makanan['id'];
                 $bookingMakanan->id_booking = $booking->id;
                 $bookingMakanan->harga = $makanan['harga'];
@@ -53,7 +52,7 @@ class BookingController extends Controller
                 $bookingMakanan->save();
             }
 
-            $hargaMakanan = OrderMakanan::where('id_booking', $booking->id)->get()->sum('total_harga');
+            $hargaMakanan = BookingDetails::where('id_booking', $booking->id)->get()->sum('total_harga');
             $booking->total_bayar = $booking->harga + $hargaMakanan;
             $booking->update();
 
